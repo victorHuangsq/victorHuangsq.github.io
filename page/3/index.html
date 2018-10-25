@@ -249,6 +249,368 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/Ubuntu下无法删除文件.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p6x2iir9l.bkt.clouddn.com/wowothink_blog_avatar_1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wowothink">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Ubuntu下无法删除文件.html" itemprop="url">Ubuntu下无法删除文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T16:29:59+08:00">
+                2018-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
+                    <span itemprop="name">碰到的问题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  511
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>问题：<br>在<code>repo sync</code>更新代码的时候，发现更新错了，<code>ctrl+c</code>强制退出，后面要将整个工程目录<code>XXX/</code>删掉，报了如下的错误：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm: 无法删除 <span class="string">"/work2/XXX/.repo/projects/vendor/imx/genivi.git/refs/tags/xxx_v1/master/usb_test"</span> : 输入/输出错误</span><br></pre></td></tr></table></figure></p>
+<p><code>dmesg</code>查看到内核有如下提示：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXT4-fs error (device sdb1): ext4_lookup:1584: inode #23997360: comm rm: deleted inode referenced: 23998390</span><br></pre></td></tr></table></figure></p>
+<p>看着情况，有可能是文件系统出问题了，本文主要讲述如何解决这个问题。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Ubuntu下无法删除文件.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    <div>
+      
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/Linux-Kernel优化-关闭串口打印.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p6x2iir9l.bkt.clouddn.com/wowothink_blog_avatar_1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wowothink">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Linux-Kernel优化-关闭串口打印.html" itemprop="url">Linux Kernel优化--关闭串口打印</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T10:02:55+08:00">
+                2018-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-Kernel优化/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux Kernel优化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  167
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用如下patch，关闭串口打印，可以至少节省几百ms的时间。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">diff --git a/arch/arm64/configs/xxx_defconfig b/arch/arm64/configs/xxx_defconfig</span><br><span class="line">index c8036df.<span class="number">.81275</span>fa <span class="number">100755</span></span><br><span class="line">--- a/arch/arm64/configs/xxx_defconfig</span><br><span class="line">+++ b/arch/arm64/configs/xxx_defconfig</span><br><span class="line">@@ <span class="number">-2985</span>,<span class="number">6</span> +<span class="number">2985</span>,<span class="number">7</span> @@ CONFIG_PRINTK_TIME=y</span><br><span class="line"> CONFIG_MESSAGE_LOGLEVEL_DEFAULT=<span class="number">4</span></span><br><span class="line"> # CONFIG_BOOT_PRINTK_DELAY is <span class="keyword">not</span> <span class="built_in">set</span></span><br><span class="line"> # CONFIG_DYNAMIC_DEBUG is <span class="keyword">not</span> <span class="built_in">set</span></span><br><span class="line">+CONFIG_PRINTK_NOT_OUTPUT=y</span><br><span class="line"> </span><br><span class="line"> #</span><br><span class="line"> # Compile-time checks <span class="keyword">and</span> compiler options</span><br><span class="line">diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c</span><br><span class="line">index <span class="number">98</span>ee2a3..e997ad7 <span class="number">100755</span></span><br><span class="line">--- a/kernel/printk/printk.c</span><br><span class="line">+++ b/kernel/printk/printk.c</span><br><span class="line">@@ <span class="number">-1568</span>,<span class="number">7</span> +<span class="number">1568</span>,<span class="number">7</span> @@ <span class="keyword">static</span> <span class="keyword">void</span> call_console_drivers(<span class="keyword">int</span> level,</span><br><span class="line"> </span><br><span class="line">     <span class="keyword">if</span> (!console_drivers)</span><br><span class="line">         <span class="keyword">return</span>;</span><br><span class="line">-</span><br><span class="line">+#ifdef CONFIG_PRINTK_NOT_OUTPUT</span><br><span class="line">     for_each_console(con) &#123;</span><br><span class="line">         <span class="keyword">if</span> (exclusive_console &amp;&amp; con != exclusive_console)</span><br><span class="line">             <span class="keyword">continue</span>;</span><br><span class="line">@@ <span class="number">-1584</span>,<span class="number">6</span> +<span class="number">1584</span>,<span class="number">7</span> @@ <span class="keyword">static</span> <span class="keyword">void</span> call_console_drivers(<span class="keyword">int</span> level,</span><br><span class="line">         <span class="keyword">else</span></span><br><span class="line">             con-&gt;write(con, text, len);</span><br><span class="line">     &#125;</span><br><span class="line">+#endif</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://wowothink.com/查找Kernel中编译的文件.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1692,374 +2054,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/Linux应用程序读写寄存器值.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Victor Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p6x2iir9l.bkt.clouddn.com/wowothink_blog_avatar_1.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wowothink">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Linux应用程序读写寄存器值.html" itemprop="url">Linux应用程序读写寄存器值</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T16:19:37+08:00">
-                2018-05-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-APP/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux APP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  785
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>需求：<br>　　在开发过程中，我们经常需要读取CPU中某个寄存器的地址，比如说读取某一个GPIO的输出状态。如读取<code>GPIO1_IO01</code>的值（以i.MX6为例），那么就是要读取寄存器<code>0x0209c000</code>中bit1的值。<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AF%BB%E5%86%99%E5%AF%84%E5%AD%98%E5%99%A8%E5%80%BC-1.png" alt="寄存器定义"></p>
-<ul>
-<li>在Kernel中可以使用<code>ioremap_nocache()</code>将该地址映射出来，然后去读取。</li>
-<li>在用户程序中，可以使用<code>mmap()</code>去读取。下面我们将使用<code>mmap()</code>函数读取该寄存器的值，并写一个专门的应用程序<code>regctl</code>来读写任意寄存器的值。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Linux应用程序读写寄存器值.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </li></ul></div>
-    
-    <div>
-      
-    </div>
-    
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/Linux-Kernel-Crash-Dump.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Victor Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p6x2iir9l.bkt.clouddn.com/wowothink_blog_avatar_1.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wowothink">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Linux-Kernel-Crash-Dump.html" itemprop="url">Linux Kernel Crash Dump</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T08:43:05+08:00">
-                2018-05-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-Kernel/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux Kernel</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3,611
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  18
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>需求：<br>　　Linux发生panic之后，如果<code>/proc/sys/kernel/panic</code>没有值的话，会一直停留在panic的界面。如果有值，则会自动重启。在一般的客户版本中，一般都会设置成自动重启，但这样的话就无法查看重启的原因了。<br>　　为了调查问题，经常需要保留现场。因此，希望在重启之前把相应的信息以文件的形式保存下来。但是如果是文件系统发生panic，这个方案明显不行。我们可以将现场的信息暂时保留在内存里面，重启的话再从内存中将信息以log的形式保存下来。</p>
-<p>本文主要讲述在linux3.0的版本上实现这个方案
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Linux-Kernel-Crash-Dump.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    <div>
-      
-    </div>
-    
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2112,7 +2106,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2208,7 +2202,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.4k</span>
+    <span title="Site words total count">47.4k</span>
   
 </div>
 
