@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://wowothink.com/Linux%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AF%BB%E5%86%99%E5%AF%84%E5%AD%98%E5%99%A8%E5%80%BC.html</loc>
+    <lastmod>2018-10-26T14:08:32.862Z</lastmod>
+  </url>  <url>
+    <loc>http://wowothink.com/iozone%E7%9A%84%E4%BD%BF%E7%94%A8.html</loc>
+    <lastmod>2018-10-26T14:08:10.801Z</lastmod>
+  </url>  <url>
+    <loc>http://wowothink.com/USB2-0%E7%90%86%E8%AE%BA%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E5%92%8C%E5%AE%9E%E9%99%85%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6.html</loc>
+    <lastmod>2018-10-26T14:03:39.183Z</lastmod>
+  </url>  <url>
+    <loc>http://wowothink.com/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</loc>
+    <lastmod>2018-10-26T13:55:24.471Z</lastmod>
+  </url>  <url>
     <loc>http://wowothink.com/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html</loc>
     <lastmod>2018-10-25T15:07:59.004Z</lastmod>
   </url>  <url>
@@ -19,9 +31,6 @@
     <loc>http://wowothink.com/Linux-Cached-high-memory-usage.html</loc>
     <lastmod>2018-10-10T13:00:45.181Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/iozone%E7%9A%84%E4%BD%BF%E7%94%A8.html</loc>
-    <lastmod>2018-09-30T14:10:10.659Z</lastmod>
-  </url>  <url>
     <loc>http://wowothink.com/Linux-USB-Test-Mode.html</loc>
     <lastmod>2018-09-23T14:45:19.046Z</lastmod>
   </url>  <url>
@@ -34,22 +43,22 @@
     <loc>http://wowothink.com/%E8%A7%A3%E5%8E%8B%E6%89%93%E5%8C%85img%E6%96%87%E4%BB%B6.html</loc>
     <lastmod>2018-09-23T08:05:40.357Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/%E5%9C%A8Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5.html</loc>
+    <loc>http://wowothink.com/%E6%89%93%E5%8C%85ko%E6%96%87%E4%BB%B6%E5%88%B0image%E4%B8%AD.html</loc>
     <lastmod>2018-09-23T08:05:40.356Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/%E6%9F%A5%E6%89%BEKernel%E4%B8%AD%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6.html</loc>
     <lastmod>2018-09-23T08:05:40.356Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/%E6%89%93%E5%8C%85ko%E6%96%87%E4%BB%B6%E5%88%B0image%E4%B8%AD.html</loc>
+    <loc>http://wowothink.com/%E5%9C%A8Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5.html</loc>
     <lastmod>2018-09-23T08:05:40.356Z</lastmod>
+  </url>  <url>
+    <loc>http://wowothink.com/%E4%BD%BF%E7%94%A8wifi%E8%BF%9E%E6%8E%A5adb.html</loc>
+    <lastmod>2018-09-23T08:05:40.355Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/%E4%BF%AE%E6%94%B9xxx-defconfig%E6%B2%A1%E6%9C%89%E8%B5%B7%E6%95%88%E6%9E%9C%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90.html</loc>
     <lastmod>2018-09-23T08:05:40.355Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%ACmount%E7%94%A8%E6%B3%95.html</loc>
-    <lastmod>2018-09-23T08:05:40.355Z</lastmod>
-  </url>  <url>
-    <loc>http://wowothink.com/%E4%BD%BF%E7%94%A8wifi%E8%BF%9E%E6%8E%A5adb.html</loc>
     <lastmod>2018-09-23T08:05:40.355Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/service%E4%B8%80%E7%9B%B4%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E5%8E%9F%E5%9B%A0.html</loc>
@@ -61,10 +70,10 @@
     <loc>http://wowothink.com/taglist-vim-ctags-cscope.html</loc>
     <lastmod>2018-09-23T08:05:40.354Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/iMX6-Mfgtool%E4%B8%ADucl%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90.html</loc>
+    <loc>http://wowothink.com/printk-%E7%94%A8%E6%B3%95.html</loc>
     <lastmod>2018-09-23T08:05:40.353Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/printk-%E7%94%A8%E6%B3%95.html</loc>
+    <loc>http://wowothink.com/iMX6-Mfgtool%E4%B8%ADucl%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90.html</loc>
     <lastmod>2018-09-23T08:05:40.353Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/lockup-watchdogs-rcu-stall-detector.html</loc>
@@ -85,13 +94,10 @@
     <loc>http://wowothink.com/eMMC%E4%BF%A1%E6%81%AF%E8%AF%BB%E5%8F%96.html</loc>
     <lastmod>2018-09-23T08:05:40.351Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/USB2-0%E7%90%86%E8%AE%BA%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6%E5%92%8C%E5%AE%9E%E9%99%85%E4%BC%A0%E8%BE%93%E9%80%9F%E5%BA%A6.html</loc>
+    <loc>http://wowothink.com/Ubuntu%E5%88%87%E6%8D%A2python%E7%89%88%E6%9C%AC.html</loc>
     <lastmod>2018-09-23T08:05:40.350Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/Ubuntu%E4%B8%8B%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6.html</loc>
-    <lastmod>2018-09-23T08:05:40.350Z</lastmod>
-  </url>  <url>
-    <loc>http://wowothink.com/Ubuntu%E5%88%87%E6%8D%A2python%E7%89%88%E6%9C%AC.html</loc>
     <lastmod>2018-09-23T08:05:40.350Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%8E%B7%E5%8F%96%E7%BC%96%E8%AF%91%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%95%B0.html</loc>
@@ -103,9 +109,6 @@
     <loc>http://wowothink.com/Linux%E6%B5%8B%E8%AF%95U%E7%9B%98%E8%AF%BB%E5%86%99%E9%80%9F%E5%BA%A6.html</loc>
     <lastmod>2018-09-23T08:05:40.349Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/Linux%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AF%BB%E5%86%99%E5%AF%84%E5%AD%98%E5%99%A8%E5%80%BC.html</loc>
-    <lastmod>2018-09-23T08:05:40.349Z</lastmod>
-  </url>  <url>
     <loc>http://wowothink.com/Linux-Kernel%E8%A3%81%E5%89%AA-ksize%E7%9A%84%E4%BD%BF%E7%94%A8.html</loc>
     <lastmod>2018-09-23T08:05:40.348Z</lastmod>
   </url>  <url>
@@ -115,10 +118,10 @@
     <loc>http://wowothink.com/Linux-Kernel%E4%BC%98%E5%8C%96-%E4%BC%98%E5%8C%96dts.html</loc>
     <lastmod>2018-09-23T08:05:40.347Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/Linux-Kernel%E4%B8%AD%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D.html</loc>
+    <loc>http://wowothink.com/Linux-Kernel-Crash-Dump.html</loc>
     <lastmod>2018-09-23T08:05:40.347Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/Linux-Kernel-Crash-Dump.html</loc>
+    <loc>http://wowothink.com/Linux-Kernel%E4%B8%AD%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D.html</loc>
     <lastmod>2018-09-23T08:05:40.347Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/Linux%20Kernel%E8%A3%81%E5%89%AA--menuconfig%E7%9A%84%E4%BD%BF%E7%94%A8.html</loc>
@@ -130,13 +133,13 @@
     <loc>http://wowothink.com/Kernl%E6%B7%BB%E5%8A%A0spidev%E7%9A%84%E8%AE%BE%E5%A4%87%E8%8A%82%E7%82%B9.html</loc>
     <lastmod>2018-09-23T08:05:40.345Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/Android%E5%85%A8%E7%BC%96%E7%BC%96%E8%AF%91kernel%E5%92%8Cuboot.html</loc>
+    <loc>http://wowothink.com/Android%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B.html</loc>
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/Kernel%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.html</loc>
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/Android%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B.html</loc>
+    <loc>http://wowothink.com/Android%E5%85%A8%E7%BC%96%E7%BC%96%E8%AF%91kernel%E5%92%8Cuboot.html</loc>
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
   </url>
 </urlset>
