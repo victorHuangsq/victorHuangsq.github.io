@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="在vi编辑器中使用sudo命令:w !sudo tee %命令:w !{cmd}，让vim执行一个外部命令{cmd}，然后把当前缓冲区的内容从stdin传入。tee是一个把stdin保存到文件的小工具。 而%，是vim当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。 返回上次的位置ctrl + o: 返回上次光标位置；ctrl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T14:06:31.471Z">
+<meta property="og:updated_time" content="2018-11-02T14:24:26.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vi常用命令">
 <meta name="twitter:description" content="在vi编辑器中使用sudo命令:w !sudo tee %命令:w !{cmd}，让vim执行一个外部命令{cmd}，然后把当前缓冲区的内容从stdin传入。tee是一个把stdin保存到文件的小工具。 而%，是vim当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。 返回上次的位置ctrl + o: 返回上次光标位置；ctrl">
@@ -336,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  481
+                  725
                 </span>
               
 
@@ -352,7 +352,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -381,6 +381,10 @@
 <h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><p><code>u</code>: 撤销；<br><code>ctrl + r</code>: 取消撤销；</p>
 <a id="more"></a>
 <h3 id="16进制显示"><a href="#16进制显示" class="headerlink" title="16进制显示"></a>16进制显示</h3><p><code>:%!xxd</code></p>
+<h3 id="16进制修改"><a href="#16进制修改" class="headerlink" title="16进制修改"></a>16进制修改</h3><p><code>:%!xxd -r</code>可以反向写入，以下内容为测试验证过程：<br>使用下面的<code>dd</code>语句，可以将<code>/dev/zero</code>产生的八进制<code>\000</code>(0x0)转换为八进制<code>\377</code>(0xff)并写入<code>temp</code>文件中，如下：<br><code>dd if=/dev/zero bs=1 count=4 | tr &quot;\000&quot; &quot;\377&quot; &gt; temp</code></p>
+<p>vi查看<code>temp</code>文件得到:<code>ÿÿÿÿ</code>，总共4个字节，<code>[noeol]</code>不包含<code>EOL</code>。<br>使用16进制<code>%!xxd</code>查看得到如下，可以看到最后多了一个字节<code>0a</code>表示<code>EOL</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0000000: ffff ffff 0a                             .....</span><br></pre></td></tr></table></figure></p>
+<p>比如说我要将这里修改成<code>a0a1 a2a3</code>，可以直接用vi编辑。然后<code>:%!xxd -r</code>反向写入再<code>:x</code>保存退出。但是查看大小变为5个字节了，莫名其妙多出1个字节，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw-rw-r-- 1 victor victor    5 11月  2 09:52 temp</span><br></pre></td></tr></table></figure></p>
+<p>具体原因详见：<a href="https://superuser.com/questions/745111/why-is-vim-adding-a-newline-is-this-a-convention" target="_blank" rel="noopener">https://superuser.com/questions/745111/why-is-vim-adding-a-newline-is-this-a-convention</a><br>要解决这个问题，就是在反向写入后保存前执行<code>:set binary</code> 和 <code>:set noeol</code>。</p>
 <h3 id="高亮所匹配的单词"><a href="#高亮所匹配的单词" class="headerlink" title="高亮所匹配的单词"></a>高亮所匹配的单词</h3><p><code>:set hlsearch</code></p>
 <h3 id="光标所处单词查找"><a href="#光标所处单词查找" class="headerlink" title="光标所处单词查找"></a>光标所处单词查找</h3><p><code>g + d</code>: 快速选中光标所在单词，按<code>n</code>可查找。</p>
 <h3 id="快速跳到下个单词"><a href="#快速跳到下个单词" class="headerlink" title="快速跳到下个单词"></a>快速跳到下个单词</h3><p><code>w</code></p>
@@ -406,7 +410,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>Title:</span><a href="/vi常用命令.html">vi常用命令</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2018-10-25 / 22:10</p>
+  <p><span>Time:</span>2018-11-02 / 22:11</p>
   <p><span>Link:</span><a href="/vi常用命令.html" title="vi常用命令">http://wowothink.com/vi常用命令.html</a>
     <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/vi常用命令.html" aria-label="copy link success"></i></span>
   </p>
@@ -619,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在vi编辑器中使用sudo命令"><span class="nav-number">1.</span> <span class="nav-text">在vi编辑器中使用sudo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回上次的位置"><span class="nav-number">2.</span> <span class="nav-text">返回上次的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排版对齐"><span class="nav-number">3.</span> <span class="nav-text">排版对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串替换"><span class="nav-number">4.</span> <span class="nav-text">字符串替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速选中单词"><span class="nav-number">5.</span> <span class="nav-text">快速选中单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">6.</span> <span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制显示"><span class="nav-number">7.</span> <span class="nav-text">16进制显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮所匹配的单词"><span class="nav-number">8.</span> <span class="nav-text">高亮所匹配的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标所处单词查找"><span class="nav-number">9.</span> <span class="nav-text">光标所处单词查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳到下个单词"><span class="nav-number">10.</span> <span class="nav-text">快速跳到下个单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除光标所在单词"><span class="nav-number">11.</span> <span class="nav-text">删除光标所在单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳转到文件尾"><span class="nav-number">12.</span> <span class="nav-text">快速跳转到文件尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配括号"><span class="nav-number">13.</span> <span class="nav-text">匹配括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换一个字符"><span class="nav-number">14.</span> <span class="nav-text">列替换一个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换多个字符"><span class="nav-number">15.</span> <span class="nav-text">列替换多个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除包含特定字符的行"><span class="nav-number">16.</span> <span class="nav-text">删除包含特定字符的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不包含指定字符的行"><span class="nav-number">17.</span> <span class="nav-text">删除不包含指定字符的行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在vi编辑器中使用sudo命令"><span class="nav-number">1.</span> <span class="nav-text">在vi编辑器中使用sudo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回上次的位置"><span class="nav-number">2.</span> <span class="nav-text">返回上次的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排版对齐"><span class="nav-number">3.</span> <span class="nav-text">排版对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串替换"><span class="nav-number">4.</span> <span class="nav-text">字符串替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速选中单词"><span class="nav-number">5.</span> <span class="nav-text">快速选中单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">6.</span> <span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制显示"><span class="nav-number">7.</span> <span class="nav-text">16进制显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制修改"><span class="nav-number">8.</span> <span class="nav-text">16进制修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮所匹配的单词"><span class="nav-number">9.</span> <span class="nav-text">高亮所匹配的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标所处单词查找"><span class="nav-number">10.</span> <span class="nav-text">光标所处单词查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳到下个单词"><span class="nav-number">11.</span> <span class="nav-text">快速跳到下个单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除光标所在单词"><span class="nav-number">12.</span> <span class="nav-text">删除光标所在单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳转到文件尾"><span class="nav-number">13.</span> <span class="nav-text">快速跳转到文件尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配括号"><span class="nav-number">14.</span> <span class="nav-text">匹配括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换一个字符"><span class="nav-number">15.</span> <span class="nav-text">列替换一个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换多个字符"><span class="nav-number">16.</span> <span class="nav-text">列替换多个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除包含特定字符的行"><span class="nav-number">17.</span> <span class="nav-text">删除包含特定字符的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不包含指定字符的行"><span class="nav-number">18.</span> <span class="nav-text">删除不包含指定字符的行</span></a></li></ol></div>
             
 
           </div>
@@ -660,7 +664,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">50.7k</span>
+    <span title="Site words total count">51.0k</span>
   
 </div>
 
