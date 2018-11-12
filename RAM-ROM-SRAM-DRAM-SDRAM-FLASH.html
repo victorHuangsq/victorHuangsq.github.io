@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python脚本,">
+  <meta name="keywords" content="碰到的问题,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="需求：　　使用SourceInsight查看源代码。要么将整个kernel的源代码添加进去，要么是需要哪个文件就添加哪个。有没有什么办法可以将Kernel目录中编译到的.c文件统一生成一个文件，然后导入到SourceInsight去加载对应的.c文件。 　　我们注意到，编译kernel，如果编译了.c文件，那么在与之对应的目录下生成.o或.mod.o文件。因此，可以递归索引查找kernel目录下所">
-<meta name="keywords" content="Python脚本">
+<meta name="description" content="以下内容完全参照三篇文章，特别是第一篇文章，再此表示感谢。https://blog.csdn.net/liujiaoyage/article/details/37930475http://www.atpinc.com/Memory-insider/computer-memory-types-dram-ram-modulehttps://blog.csdn.net/wbwwf8685/article">
+<meta name="keywords" content="碰到的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="查找Kernel中编译的文件">
-<meta property="og:url" content="http://wowothink.com/查找Kernel中编译的文件.html">
+<meta property="og:title" content="RAM_ROM_SRAM_DRAM_SDRAM_FLASH">
+<meta property="og:url" content="http://wowothink.com/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html">
 <meta property="og:site_name" content="wowothink">
-<meta property="og:description" content="需求：　　使用SourceInsight查看源代码。要么将整个kernel的源代码添加进去，要么是需要哪个文件就添加哪个。有没有什么办法可以将Kernel目录中编译到的.c文件统一生成一个文件，然后导入到SourceInsight去加载对应的.c文件。 　　我们注意到，编译kernel，如果编译了.c文件，那么在与之对应的目录下生成.o或.mod.o文件。因此，可以递归索引查找kernel目录下所">
+<meta property="og:description" content="以下内容完全参照三篇文章，特别是第一篇文章，再此表示感谢。https://blog.csdn.net/liujiaoyage/article/details/37930475http://www.atpinc.com/Memory-insider/computer-memory-types-dram-ram-modulehttps://blog.csdn.net/wbwwf8685/article">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-23T08:05:40.356Z">
+<meta property="og:updated_time" content="2018-11-12T14:28:35.595Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="查找Kernel中编译的文件">
-<meta name="twitter:description" content="需求：　　使用SourceInsight查看源代码。要么将整个kernel的源代码添加进去，要么是需要哪个文件就添加哪个。有没有什么办法可以将Kernel目录中编译到的.c文件统一生成一个文件，然后导入到SourceInsight去加载对应的.c文件。 　　我们注意到，编译kernel，如果编译了.c文件，那么在与之对应的目录下生成.o或.mod.o文件。因此，可以递归索引查找kernel目录下所">
+<meta name="twitter:title" content="RAM_ROM_SRAM_DRAM_SDRAM_FLASH">
+<meta name="twitter:description" content="以下内容完全参照三篇文章，特别是第一篇文章，再此表示感谢。https://blog.csdn.net/liujiaoyage/article/details/37930475http://www.atpinc.com/Memory-insider/computer-memory-types-dram-ram-modulehttps://blog.csdn.net/wbwwf8685/article">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wowothink.com/查找Kernel中编译的文件.html">
+  <link rel="canonical" href="http://wowothink.com/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html">
 
 
 
 
 
-  <title>查找Kernel中编译的文件 | wowothink</title>
+  <title>RAM_ROM_SRAM_DRAM_SDRAM_FLASH | wowothink</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/查找Kernel中编译的文件.html">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Victor Huang">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">查找Kernel中编译的文件</h1>
+          <h1 class="post-title" itemprop="name headline">RAM_ROM_SRAM_DRAM_SDRAM_FLASH</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T22:35:17+08:00">
-                2018-05-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T22:25:25+08:00">
+                2018-11-12
               </time>
             
 
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python脚本/" itemprop="url" rel="index">
-                    <span itemprop="name">Python脚本</span>
+                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
+                    <span itemprop="name">碰到的问题</span>
                   </a>
                 </span>
 
@@ -338,7 +338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  411
+                  1,720
                 </span>
               
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -375,10 +375,40 @@
       
 
       
-        <p>需求：<br>　　使用SourceInsight查看源代码。要么将整个kernel的源代码添加进去，要么是需要哪个文件就添加哪个。<br>有没有什么办法可以将Kernel目录中编译到的<code>.c</code>文件统一生成一个文件，然后导入到SourceInsight去加载对应的.c文件。</p>
-<p>　　我们注意到，编译kernel，如果编译了<code>.c</code>文件，那么在与之对应的目录下生成<code>.o</code>或<code>.mod.o</code>文件。因此，可以递归索引查找kernel目录下所有的文件，将<code>.o</code>过滤出来，与之对应的.c文件就是我们要查找的文件，因此有了下面的python代码。<a id="more"></a></p>
+        <p>以下内容完全参照三篇文章，特别是第一篇文章，再此表示感谢。<br><a href="https://blog.csdn.net/liujiaoyage/article/details/37930475" target="_blank" rel="noopener">https://blog.csdn.net/liujiaoyage/article/details/37930475</a><br><a href="http://www.atpinc.com/Memory-insider/computer-memory-types-dram-ram-module" target="_blank" rel="noopener">http://www.atpinc.com/Memory-insider/computer-memory-types-dram-ram-module</a><br><a href="https://blog.csdn.net/wbwwf8685/article/details/52724068" target="_blank" rel="noopener">https://blog.csdn.net/wbwwf8685/article/details/52724068</a></p>
+<a id="more"></a>
+<h2 id="RAM和ROM的区别"><a href="#RAM和ROM的区别" class="headerlink" title="RAM和ROM的区别"></a>RAM和ROM的区别</h2><p>根据掉电数据是否丢失可以分为<code>RAM（Read Only Memory/随机存取存储器）</code>和<code>ROM（Random Access Memory/只读存储器）</code>，其中<code>RAM</code>的访问速度比较快，但掉电后数据会丢失。<br>而<code>ROM</code>掉电后数据不会丢失，<code>ROM</code>可片上运行，与<code>NOR FLASH</code>一样，通常存储CPU的<code>ROM Code</code>，不可改变。能不能片上执行，主要是看存储器存放的代码是可以由CPU直接取指并执行。</p>
 <hr>
-<h1 id="查找-o文件源码"><a href="#查找-o文件源码" class="headerlink" title="查找.o文件源码"></a>查找.o文件源码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">all_files = []</span><br><span class="line">fp = open(<span class="string">"out_files.txt"</span>, <span class="string">"w+"</span>)</span><br><span class="line">hit_count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filt_mod_file</span><span class="params">(file)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> os.path.splitext(file)[<span class="number">1</span>] != <span class="string">".mod"</span>:</span><br><span class="line">        temp_file = os.path.splitext(file)[<span class="number">0</span>]</span><br><span class="line">        <span class="comment">#print(os.path.split(temp_file)[1])</span></span><br><span class="line">        <span class="keyword">if</span> os.path.split(temp_file)[<span class="number">1</span>] != <span class="string">"built-in"</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_dir</span><span class="params">(rootDir)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(rootDir):        <span class="comment"># 当前目录下的文件和文件夹</span></span><br><span class="line">        path = os.path.join(rootDir, file)   <span class="comment"># Join one or more path components intelligently</span></span><br><span class="line">        <span class="keyword">if</span> os.path.isdir(path):             <span class="comment"># 迭代查找目录下的文件</span></span><br><span class="line">            find_dir(path)</span><br><span class="line">        <span class="keyword">if</span> os.path.splitext(path)[<span class="number">1</span>] == <span class="string">".o"</span>: <span class="comment"># 分割路径和文件名，判断后缀为 .o 的文件</span></span><br><span class="line">            temp_path = os.path.splitext(path)[<span class="number">0</span>] <span class="comment"># 过滤 .cmd.o 和 built-in 文件</span></span><br><span class="line">            <span class="keyword">if</span> filt_mod_file(temp_path) == <span class="keyword">True</span>:</span><br><span class="line">                path = path.replace(<span class="string">".o"</span>, <span class="string">".c"</span>) <span class="comment"># 将 .o 的后缀改成 .c 的后缀</span></span><br><span class="line">                fp.write(path)                  <span class="comment"># 将结果写入到文件中去</span></span><br><span class="line">                fp.write(<span class="string">"\n"</span>)</span><br><span class="line">                <span class="keyword">global</span> hit_count</span><br><span class="line">                hit_count += <span class="number">1</span></span><br><span class="line">                <span class="comment">#print(path)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment">#path = "Z:\\work\\xxx_project\\linux"</span></span><br><span class="line">    path = os.path.abspath(<span class="string">"."</span>)</span><br><span class="line">    find_dir(path)</span><br><span class="line">    fp.close()</span><br><span class="line">    print(<span class="string">"hit files count: %d"</span> %(hit_count))</span><br></pre></td></tr></table></figure>
+<h2 id="RAM的分类"><a href="#RAM的分类" class="headerlink" title="RAM的分类"></a>RAM的分类</h2><p><code>RAM</code>又可分为<code>SRAM（Static RAM/静态存储器）</code>和<code>DRAM（Dynamic RAM/动态存储器）</code>。</p>
+<ul>
+<li><code>SRAM</code>：<code>SRAM</code>速度非常快，是目前读写最快的存储设备了，但是它也非常昂贵，所以只在要求很苛刻的地方使用，譬如CPU的一级缓冲，二级缓冲。</li>
+<li><code>DRAM</code>：每个<code>DRAM</code>存储器单元由集成电路内的晶体管和电容器组成，数据位存储在电容器中。由于晶体管总是少量泄漏，电容器会缓慢放电，导致存储在其中的信息耗尽; 因此，每隔几毫秒就必须刷新<code>DRAM</code>（给定新的电子充电）以保留数据。<br>计算机内存就是<code>DRAM</code>的。<code>DRAM</code>分为很多种，常见的主要有<code>FPRAM/FastPage</code>、<code>EDORAM</code>、<code>SDRAM</code>、<code>DDR RAM</code>、<code>RDRAM</code>等。<code>DDR RAM（Date-Rate RAM）</code>也称作<code>DDR SDRAM</code>，这种改进型的<code>RAM</code>和<code>SDRAM</code>是基本一样的，不同之处在于它可以在一个时钟读写两次数据，这样就使得数据传输速度加倍了。这是目前电脑中用得最多的内存，而且它有着成本优势.</li>
+</ul>
+<hr>
+<h2 id="DRAM分类"><a href="#DRAM分类" class="headerlink" title="DRAM分类"></a>DRAM分类</h2><ul>
+<li><code>SDRAM-Synchronizes DRAM</code>：是<code>DRAM</code>的一种，它是同步动态存储器，利用一个单一的系统时钟同步所有的地址数据和控制信号。使用<code>SDRAM</code>不但能提高系统表现，还能简化设计、提供高速的数据传输，在嵌入式系统中经常使用。</li>
+<li><code>RDRAM-Rambus DRAM</code>：名字取自Rambus公司。它在21世纪初流行，主要用于视频游戏设备和显卡，传输速度高达1GHz。</li>
+<li><code>DDR SDRAM-Double Data Rate SDRAM</code>：双倍速率同步动态随机存储器。<code>SDRAM</code>在一个时钟周期内只传输一次数据，它是在时钟的上升期进行数据传输；而<code>DDR</code>内存则是一个时钟周期内传输两次数据，它能够在时钟的上升期和下降期各传输一次数据，因此称为双倍速率同步动态随机存储器。<br>这就是我们通常口中所说的<code>DDR</code>内存条。</li>
+</ul>
+<hr>
+<h2 id="Flash定义"><a href="#Flash定义" class="headerlink" title="Flash定义"></a>Flash定义</h2><p><code>Flash</code>也是一种非易失性存储器（掉电不会丢失），它擦写方便，访问速度快，已大大取代了传统的<code>EPROM</code>的地位。由于它具有和<code>ROM</code>一样掉电不会丢失的特性，因此很多人称其为<code>Flash ROM</code>。<br><code>FLASH</code>存储器又称闪存，它结合了<code>ROM</code>和<code>RAM</code>的长处，不仅具备电子可擦出可编程<code>（EEPROM）</code>的性能，还不会断电丢失数据同时可以快速读取数据（<code>NVRAM</code>的优势），U盘和MP3里用的就是这种存储器。<br>在过去的20年里，嵌入式系统一直使用<code>ROM（EPROM）</code>作为它们的存储设备，然而近年来<code>Flash</code>全面代替了<code>ROM（EPROM）</code>在嵌入式系统中的地位，用作存储<code>bootloader</code>以及操作系统或者程序代码或者直接当硬盘使用。</p>
+<ul>
+<li><code>NOR Flash</code>：<code>NOR Flash</code>的读取和我们常见的<code>SDRAM</code>的读取是一样，用户可以直接运行装载在<code>NOR FLASH</code>里面的代码（也就是片上运行），这样可以减少<code>SRAM</code>的容量从而节约了成本。</li>
+<li><code>NAND Flash</code>：<code>NAND Flash</code>没有采取内存的随机读取技术，它的读取是以一次读取一块的形式来进行的，通常是一次读取512个字节，采用这种技术的<code>Flash</code>比较廉价。<font color="red">用户不能直接运行<code>NAND Flash</code>上的代码，因此好多使用<code>NAND Flash</code>的开发板除了使用<code>NAND Flah</code>以外，还作上了一块小的<code>NOR Flash</code>来运行启动代码。</font>
+
+</li>
+</ul>
+<p>比较：</p>
+<ul>
+<li><code>NAND</code>则是高数据存储密度的理想解决方案，<code>NOR</code>一般只用来存储少量的代码；</li>
+<li><code>NOR</code>主要应用在代码存储介质中，NOR的特点是应用简单、无需专门的接口电路、传输效率高，它是属于芯片内执行<code>(XIP, eXecute In Place)</code>，这样应用程序可以直接在<code>NOR flash</code>上运行，不必再把代码读到系统RAM中；</li>
+<li>在1～4MB的小容量时具有很高的成本效益，但是很低的写入和擦除速度大大影响了它的性能。NOR flash带有SRAM接口，有足够的地址引脚来寻址，可以很容易地存取其内部的每一个字节。NOR flash占据了容量为1～16MB闪存市场的大部分。NAND结构能提供极高的单元密度，可以达到高存储密度，并且写入和擦除的速度也很快。应用NAND的困难在于flash的管理和需要特殊的系统接口；</li>
+<li><code>Nor Flash</code>有自己的地址线和数据线，可以采用类似于memory的随机访问方式，在<code>Nor Flash</code>上可以直接运行程序，所以<code>Nor Flash</code>可以直接用来做boot，采用<code>Nor Flash</code>启动的时候会把地址映射到0x00上；</li>
+<li><code>Nand Flash</code>是IO设备，数据、地址、控制线都是共用的，需要软件区控制读取时序，所以不能像<code>Nor Flash</code>内存一样随机访问，不能<code>EIP</code>（片上运行），因此不能直接作为boot；</li>
+</ul>
+<hr>
+<h2 id="为什么不能再NAND-上运行程序？"><a href="#为什么不能再NAND-上运行程序？" class="headerlink" title="为什么不能再NAND 上运行程序？"></a>为什么不能再NAND 上运行程序？</h2><p>代码执行主要就是指令取值和数据存取，对于指令存取和数据存取，CPU 直接将要预取的指令或者数据的地址发到系统总线上，对于ARM (就是AXBI)总线，这个地址会根据Soc之间的地址编码送到不同的控制器。<br>对于<code>NAND Flash</code>根本就没有地址线，只有数据线。<code>NAND Flash</code>的读取是要靠软件代码经过<code>NAND Flash controller</code>发相关的命令和要地址等数据到<code>NAND Flash</code>芯片内部的控制器，<font color="red">命令和地址都是经过数据线传送的</font>。一般需要多个周期，由于需要数据读写，需要软件介入，所以说他不是<code>XIP</code>的。<br><code>XIP</code>从某种意义上说是CPU送出的地址能否不经过任何软件直接能够寻址到相关的存储单元。所以<code>Nor Flash/SRAM/SDRAM</code>都是<code>XIP</code>的，而<code>Nand Flash</code>等就不是<code>XIP</code>了。</p>
+
       
     </div>
     
@@ -391,11 +421,11 @@
   <!-- JS�� sweetalert ���޸�·�� -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>Title:</span><a href="/查找Kernel中编译的文件.html">查找Kernel中编译的文件</a></p>
+  <p><span>Title:</span><a href="/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html">RAM_ROM_SRAM_DRAM_SDRAM_FLASH</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2018-09-23 / 16:09</p>
-  <p><span>Link:</span><a href="/查找Kernel中编译的文件.html" title="查找Kernel中编译的文件">http://wowothink.com/查找Kernel中编译的文件.html</a>
-    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/查找Kernel中编译的文件.html" aria-label="copy link success"></i></span>
+  <p><span>Time:</span>2018-11-12 / 22:11</p>
+  <p><span>Link:</span><a href="/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html" title="RAM_ROM_SRAM_DRAM_SDRAM_FLASH">http://wowothink.com/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html</a>
+    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html" aria-label="copy link success"></i></span>
   </p>
   <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>  
 </div>
@@ -431,7 +461,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python脚本/" rel="tag"><i class="fa fa-tag"></i> Python脚本</a>
+            <a href="/tags/碰到的问题/" rel="tag"><i class="fa fa-tag"></i> 碰到的问题</a>
           
         </div>
       
@@ -444,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Kernel添加全局变量.html" rel="next" title="Kernel添加全局变量">
-                <i class="fa fa-chevron-left"></i> Kernel添加全局变量
+              <a href="/git-commit-template.html" rel="next" title="git-commit-template">
+                <i class="fa fa-chevron-left"></i> git-commit-template
               </a>
             
           </div>
@@ -454,8 +484,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Linux-Kernel优化-关闭串口打印.html" rel="prev" title="Linux Kernel优化--关闭串口打印">
-                Linux Kernel优化--关闭串口打印 <i class="fa fa-chevron-right"></i>
+              <a href="/fsl-image-mfgtool-initramfs-imx-mfgtools-cpio-gz-u-boot注入程序.html" rel="prev" title="fsl-image-mfgtool-initramfs-imx_mfgtools.cpio.gz.u-boot注入程序">
+                fsl-image-mfgtool-initramfs-imx_mfgtools.cpio.gz.u-boot注入程序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -606,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查找-o文件源码"><span class="nav-number">1.</span> <span class="nav-text">查找.o文件源码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RAM和ROM的区别"><span class="nav-number">1.</span> <span class="nav-text">RAM和ROM的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RAM的分类"><span class="nav-number">2.</span> <span class="nav-text">RAM的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DRAM分类"><span class="nav-number">3.</span> <span class="nav-text">DRAM分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flash定义"><span class="nav-number">4.</span> <span class="nav-text">Flash定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么不能再NAND-上运行程序？"><span class="nav-number">5.</span> <span class="nav-text">为什么不能再NAND 上运行程序？</span></a></li></ol></div>
             
 
           </div>

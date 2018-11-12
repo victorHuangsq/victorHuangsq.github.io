@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wowothink.com/about/index.html</loc>
+    <loc>http://wowothink.com/Android%E4%BC%A0%E9%80%92%E5%AE%8F%E7%BB%99uboot%E6%88%96kernel.html</loc>
     
-    <lastmod>2018-11-11T13:56:53.671Z</lastmod>
+    <lastmod>2018-11-12T14:43:08.233Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wowothink.com/fsl-image-mfgtool-initramfs-imx-mfgtools-cpio-gz-u-boot%E6%B3%A8%E5%85%A5%E7%A8%8B%E5%BA%8F.html</loc>
+    
+    <lastmod>2018-11-12T14:36:27.575Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wowothink.com/RAM-ROM-SRAM-DRAM-SDRAM-FLASH.html</loc>
+    
+    <lastmod>2018-11-12T14:28:35.595Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wowothink.com/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%BD%91%E7%AB%99%E8%AE%B0%E5%BD%95.html</loc>
     
-    <lastmod>2018-11-02T14:28:24.653Z</lastmod>
+    <lastmod>2018-11-12T14:17:28.497Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wowothink.com/about/index.html</loc>
+    
+    <lastmod>2018-11-11T13:56:53.671Z</lastmod>
     
   </url>
   
@@ -128,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://wowothink.com/%E5%9C%A8Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5.html</loc>
+    <loc>http://wowothink.com/%E6%89%93%E5%8C%85ko%E6%96%87%E4%BB%B6%E5%88%B0image%E4%B8%AD.html</loc>
     
     <lastmod>2018-09-23T08:05:40.356Z</lastmod>
     
@@ -142,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://wowothink.com/%E6%89%93%E5%8C%85ko%E6%96%87%E4%BB%B6%E5%88%B0image%E4%B8%AD.html</loc>
+    <loc>http://wowothink.com/%E5%9C%A8Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5.html</loc>
     
     <lastmod>2018-09-23T08:05:40.356Z</lastmod>
     
@@ -156,14 +177,14 @@
   </url>
   
   <url>
-    <loc>http://wowothink.com/%E4%BD%BF%E7%94%A8wifi%E8%BF%9E%E6%8E%A5adb.html</loc>
+    <loc>http://wowothink.com/%E4%BF%AE%E6%94%B9xxx-defconfig%E6%B2%A1%E6%9C%89%E8%B5%B7%E6%95%88%E6%9E%9C%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90.html</loc>
     
     <lastmod>2018-09-23T08:05:40.355Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wowothink.com/%E4%BF%AE%E6%94%B9xxx-defconfig%E6%B2%A1%E6%9C%89%E8%B5%B7%E6%95%88%E6%9E%9C%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90.html</loc>
+    <loc>http://wowothink.com/%E4%BD%BF%E7%94%A8wifi%E8%BF%9E%E6%8E%A5adb.html</loc>
     
     <lastmod>2018-09-23T08:05:40.355Z</lastmod>
     
@@ -191,6 +212,13 @@
   </url>
   
   <url>
+    <loc>http://wowothink.com/printk-%E7%94%A8%E6%B3%95.html</loc>
+    
+    <lastmod>2018-09-23T08:05:40.353Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wowothink.com/iMX6-Mfgtool%E4%B8%ADucl%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90.html</loc>
     
     <lastmod>2018-09-23T08:05:40.353Z</lastmod>
@@ -199,13 +227,6 @@
   
   <url>
     <loc>http://wowothink.com/lockup-watchdogs-rcu-stall-detector.html</loc>
-    
-    <lastmod>2018-09-23T08:05:40.353Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wowothink.com/printk-%E7%94%A8%E6%B3%95.html</loc>
     
     <lastmod>2018-09-23T08:05:40.353Z</lastmod>
     
@@ -247,13 +268,6 @@
   </url>
   
   <url>
-    <loc>http://wowothink.com/Ubuntu%E5%88%87%E6%8D%A2python%E7%89%88%E6%9C%AC.html</loc>
-    
-    <lastmod>2018-09-23T08:05:40.350Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wowothink.com/Ubuntu%E4%B8%8B%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6.html</loc>
     
     <lastmod>2018-09-23T08:05:40.350Z</lastmod>
@@ -261,9 +275,9 @@
   </url>
   
   <url>
-    <loc>http://wowothink.com/Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%8E%B7%E5%8F%96%E7%BC%96%E8%AF%91%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%95%B0.html</loc>
+    <loc>http://wowothink.com/Ubuntu%E5%88%87%E6%8D%A2python%E7%89%88%E6%9C%AC.html</loc>
     
-    <lastmod>2018-09-23T08:05:40.349Z</lastmod>
+    <lastmod>2018-09-23T08:05:40.350Z</lastmod>
     
   </url>
   
@@ -276,6 +290,13 @@
   
   <url>
     <loc>http://wowothink.com/Linux%E9%A9%B1%E5%8A%A8%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%94%AF%E6%8C%81%E7%89%B9%E5%AE%9AUSB-HUB.html</loc>
+    
+    <lastmod>2018-09-23T08:05:40.349Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wowothink.com/Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%8E%B7%E5%8F%96%E7%BC%96%E8%AF%91%E7%9A%84%E4%BB%BB%E5%8A%A1%E6%95%B0.html</loc>
     
     <lastmod>2018-09-23T08:05:40.349Z</lastmod>
     
@@ -296,6 +317,13 @@
   </url>
   
   <url>
+    <loc>http://wowothink.com/Linux-Kernel-Crash-Dump.html</loc>
+    
+    <lastmod>2018-09-23T08:05:40.347Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wowothink.com/Linux-Kernel%E4%B8%AD%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D.html</loc>
     
     <lastmod>2018-09-23T08:05:40.347Z</lastmod>
@@ -304,13 +332,6 @@
   
   <url>
     <loc>http://wowothink.com/Linux-Kernel%E4%BC%98%E5%8C%96-%E4%BC%98%E5%8C%96dts.html</loc>
-    
-    <lastmod>2018-09-23T08:05:40.347Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wowothink.com/Linux-Kernel-Crash-Dump.html</loc>
     
     <lastmod>2018-09-23T08:05:40.347Z</lastmod>
     
@@ -345,14 +366,14 @@
   </url>
   
   <url>
-    <loc>http://wowothink.com/Android%E5%85%A8%E7%BC%96%E7%BC%96%E8%AF%91kernel%E5%92%8Cuboot.html</loc>
+    <loc>http://wowothink.com/Android%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B.html</loc>
     
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wowothink.com/Android%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B.html</loc>
+    <loc>http://wowothink.com/Android%E5%85%A8%E7%BC%96%E7%BC%96%E8%AF%91kernel%E5%92%8Cuboot.html</loc>
     
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
     
