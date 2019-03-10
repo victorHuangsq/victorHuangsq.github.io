@@ -87,17 +87,16 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="Mfgtool是用于下载bin或者image到目标板子上的PC软件，包括ramdisk、u-boot、uImage等文件，本文主要讲述i.MX6使用Mfgtool烧录image原理。如有错误，请指出。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-1.png">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-2.png">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-3.png">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-4.png">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-5.png">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-6.png">
-<meta property="og:updated_time" content="2018-09-23T08:05:40.352Z">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bb3">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bb5">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bb7">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bba">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bbe">
+<meta property="og:updated_time" content="2019-03-10T09:58:47.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="i.MX6使用Mfgtool烧录image原理">
 <meta name="twitter:description" content="Mfgtool是用于下载bin或者image到目标板子上的PC软件，包括ramdisk、u-boot、uImage等文件，本文主要讲述i.MX6使用Mfgtool烧录image原理。如有错误，请指出。">
-<meta name="twitter:image" content="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-1.png">
+<meta name="twitter:image" content="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bb3">
 
 
 
@@ -384,7 +383,7 @@
       
         <p>Mfgtool是用于下载bin或者image到目标板子上的PC软件，包括<code>ramdisk</code>、<code>u-boot</code>、<code>uImage</code>等文件，本文主要讲述i.MX6使用Mfgtool烧录image原理。如有错误，请指出。<a id="more"></a></p>
 <hr>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>可以从freescale的官网上下载Mfgtool，里面包含Mfgtool的使用说明.<br><a href="http://www.nxp.com/products/automotive-products/microcontrollers-and-processors/arm-mcus-and-mpus/i.mx-application-processors/i.mx-6-processors/i.mx-6quadplus-processor-quad-core-high-performance-advanced-3d-graphics-hd-video-advanced-multimedia-arm-cortex-a9-core:i.MX6QP?tab=Design_Tools_Tab" target="_blank" rel="noopener">http://www.nxp.com/products/automotive-products/microcontrollers-and-processors/arm-mcus-and-mpus/i.mx-application-processors/i.mx-6-processors/i.mx-6quadplus-processor-quad-core-high-performance-advanced-3d-graphics-hd-video-advanced-multimedia-arm-cortex-a9-core:i.MX6QP?tab=Design_Tools_Tab</a><br>目录结构如下：<br><img src="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-1.png" alt="目录结构"></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>可以从freescale的官网上下载Mfgtool，里面包含Mfgtool的使用说明.<br><a href="http://www.nxp.com/products/automotive-products/microcontrollers-and-processors/arm-mcus-and-mpus/i.mx-application-processors/i.mx-6-processors/i.mx-6quadplus-processor-quad-core-high-performance-advanced-3d-graphics-hd-video-advanced-multimedia-arm-cortex-a9-core:i.MX6QP?tab=Design_Tools_Tab" target="_blank" rel="noopener">http://www.nxp.com/products/automotive-products/microcontrollers-and-processors/arm-mcus-and-mpus/i.mx-application-processors/i.mx-6-processors/i.mx-6quadplus-processor-quad-core-high-performance-advanced-3d-graphics-hd-video-advanced-multimedia-arm-cortex-a9-core:i.MX6QP?tab=Design_Tools_Tab</a><br>目录结构如下：</p>
 <ul>
 <li><code>Document/</code>: 关于Mfgtool 的使用文档；</li>
 <li><code>Drivers/</code>: USB iMX_BulkIO_Driver；</li>
@@ -397,23 +396,23 @@
 <hr>
 <h1 id="烧写步骤"><a href="#烧写步骤" class="headerlink" title="烧写步骤"></a>烧写步骤</h1><ul>
 <li>通过板子的USB OTG口连接到PC机上；</li>
-<li>设置启动模式为Download mode，启动模式有下面几种：<br><img src="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-2.png" alt="启动模式"></li>
+<li>设置启动模式为Download mode，启动模式有下面几种：<br><img src="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bb3" alt="启动模式"></li>
 <li>板子上电之后在PC端的设备管理器上可以看到一个<code>HID-compliant device</code>设备；</li>
 <li>打开PC机上的Mfgtool工具，并开始烧写。<br>注意：在这过程中，板子会被枚举为一个mass storage的设备。</li>
 </ul>
 <hr>
-<h1 id="Mfgtool工作原理"><a href="#Mfgtool工作原理" class="headerlink" title="Mfgtool工作原理"></a>Mfgtool工作原理</h1><p>参照<a href="http://p6x2iir9l.bkt.clouddn.com/MFGTOOLCustomizationGuide.pptx" target="_blank" rel="noopener">MFGTOOLCustomizationGuide.pptx</a> 里面介绍用户客制化Mfgtool的详细步骤。<br><img src="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-3.png" alt="详细步骤"></p>
+<h1 id="Mfgtool工作原理"><a href="#Mfgtool工作原理" class="headerlink" title="Mfgtool工作原理"></a>Mfgtool工作原理</h1><p>参照<a href="http://p6x2iir9l.bkt.clouddn.com/MFGTOOLCustomizationGuide.pptx" target="_blank" rel="noopener">MFGTOOLCustomizationGuide.pptx</a> 里面介绍用户客制化Mfgtool的详细步骤。<br><img src="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bb5" alt="详细步骤"></p>
 <ul>
 <li>当板子上电后，什么都没有初始化，只有ROM可以run。固化在ROM的code会去初始化USB，并将其配置为HID设备。这就是为什么板子设置为download模式并上电后在PC端的设备管理器可以看到<code>HID-compliant device</code>连上。</li>
 <li>一旦PC机检测到HID设备连上，那么PC（USB Host）就会去枚举设备并建立连接。建立连接后的第一件事就是传送一个Mfgtools firmware（mini uboot）到目标板 SoC 的 IRAM 中然后开始运行，u-boot 会对目标板进行初始化， 重点是初始化 DDR/eMMC 等设备， 所以之后 DDR 及 eMMC已经可以访问了。它会展开初始化内存的代码或者是从image（像u-boot）获取数据。也支持内存初始化脚本去初始化数据。当DRAM初始化完毕之后，就可以准备运行code了。</li>
-<li>当DRAM初始化完毕之后，PC就会将Mfgtools firmware（mini OS和mini RAM文件系统）放到RAM中去执行，然后PC发送命令给ROM让其跳转到mini OS去执行。注意，这里的mini OS实际上是一个小型的系统，主要用来烧录（dd命令）我们编译好的normal OS。<br>mini OS必须要配置USB、USB大容量存储驱动、SD卡、UTP等。详见：<code>mfgtools\Document\V2\Manufacturing Tool V2 Linux or Android Firmware Development Guide V2.docx</code>文档。<br>之所以要自己客制化mini OS系统用于烧写normal OS，而不是Mfgtools集成这个小的系统。是因为每个客户都有自己定制的板子，NAND/eMMC/USB配置都有可能不一样，所以这些初始化这些设备需要客户自己来定制。<br><img src="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-4.png" alt="客制化"></li>
+<li>当DRAM初始化完毕之后，PC就会将Mfgtools firmware（mini OS和mini RAM文件系统）放到RAM中去执行，然后PC发送命令给ROM让其跳转到mini OS去执行。注意，这里的mini OS实际上是一个小型的系统，主要用来烧录（dd命令）我们编译好的normal OS。<br>mini OS必须要配置USB、USB大容量存储驱动、SD卡、UTP等。详见：<code>mfgtools\Document\V2\Manufacturing Tool V2 Linux or Android Firmware Development Guide V2.docx</code>文档。<br>之所以要自己客制化mini OS系统用于烧写normal OS，而不是Mfgtools集成这个小的系统。是因为每个客户都有自己定制的板子，NAND/eMMC/USB配置都有可能不一样，所以这些初始化这些设备需要客户自己来定制。<br><img src="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bb7" alt="客制化"></li>
 <li>这之后启动mini OS（上面说的在烧录过程中可以看到串口的打印信息都是在mini OS里面打印的）。通过 command line 可以看到，此mini OS 启动 linuxrc 作为第一个进程，linuxrc 其实是一个脚本，最终通过执行 uuc 来启动 UTP传输协议。UTP 是作为 USB File Storage(v3 Kernel)或 USB Mass Storage(v4 Kernel)驱动的扩展。所以启动 UTP 必须对 USB 进行 reset 然后重新枚举。<br>直观的感觉就是(v3 Kernel 是在 PC上弹出发现一个需要格式化的存储设备)(v4 Kernel 是了现一个 USB File-Stor Gadget Divice设备)。<br>由于在mini OS我们配置了USB MSC设备，支持大的数据量传输。这就是为什么在烧录过程中会提示格式化磁盘。</li>
 <li>之后PC就会将ucl.xml中的命令传输给mini OS去执行（包括dd命令），将用户编译的normal OS文件烧录。该mini OS可以支持很多命令，并且可以执行脚本，先分区，然后把相应的image文件逐一传送过来，通过 dd 写入到相应的分区。<br>注：mini OS是可以根据板子的情况进行定制。具体的定制步骤可以参照下面的文档：<br><code>mfgtools\Document\V2\Manufacturing Tool V2 Linux or Android Firmware Development Guide V2.docx</code></li>
 </ul>
 <hr>
-<h1 id="mini-OS客制化过程"><a href="#mini-OS客制化过程" class="headerlink" title="mini OS客制化过程"></a>mini OS客制化过程</h1><p><img src="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-5.png" alt="mini OS客制化过程"></p>
+<h1 id="mini-OS客制化过程"><a href="#mini-OS客制化过程" class="headerlink" title="mini OS客制化过程"></a>mini OS客制化过程</h1><p><img src="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bba" alt="mini OS客制化过程"></p>
 <hr>
-<h1 id="mini-u-boot客制化"><a href="#mini-u-boot客制化" class="headerlink" title="mini u-boot客制化"></a>mini u-boot客制化</h1><p><img src="http://p6x2iir9l.bkt.clouddn.com/i.MX6%E4%BD%BF%E7%94%A8Mfgtool%E7%83%A7%E5%BD%95image%E5%8E%9F%E7%90%86-6.png" alt="mini u-boot客制化过程"></p>
+<h1 id="mini-u-boot客制化"><a href="#mini-u-boot客制化" class="headerlink" title="mini u-boot客制化"></a>mini u-boot客制化</h1><p><img src="https://pic.superbed.cn/item/5c84dfa13a213b04179c0bbe" alt="mini u-boot客制化过程"></p>
 <hr>
 <h1 id="ucl-xml"><a href="#ucl-xml" class="headerlink" title="ucl.xml"></a>ucl.xml</h1><p><code>ucl.xml</code> 文件存放着Mfgtool和Kernel要执行的命令。具体参照下面的文档：<br><code>mfgtools\Document\V2\Manufacturing Tool V2 UCL User Guide.docx</code></p>
 
@@ -431,7 +430,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>Title:</span><a href="/i.MX6使用Mfgtool烧录image原理.html">i.MX6使用Mfgtool烧录image原理</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2018-09-23 / 16:09</p>
+  <p><span>Time:</span>2019-03-10 / 17:03</p>
   <p><span>Link:</span><a href="/i.MX6使用Mfgtool烧录image原理.html" title="i.MX6使用Mfgtool烧录image原理">http://wowothink.com/i.MX6使用Mfgtool烧录image原理.html</a>
     <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/i.MX6使用Mfgtool烧录image原理.html" aria-label="copy link success"></i></span>
   </p>
@@ -671,7 +670,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -685,7 +684,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.0k</span>
+    <span title="Site words total count">54.9k</span>
   
 </div>
 

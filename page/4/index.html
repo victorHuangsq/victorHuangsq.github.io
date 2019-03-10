@@ -1480,7 +1480,7 @@
 
       
         
-          <p>需求：<br>　　在开发过程中，我们经常需要读取CPU中某个寄存器的地址，比如说读取某一个GPIO的输出状态。如读取<code>GPIO1_IO01</code>的值（以i.MX6为例），那么就是要读取寄存器<code>0x0209c000</code>中bit1的值。<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AF%BB%E5%86%99%E5%AF%84%E5%AD%98%E5%99%A8%E5%80%BC-1.png" alt="寄存器定义"></p>
+          <p>需求：<br>　　在开发过程中，我们经常需要读取CPU中某个寄存器的地址，比如说读取某一个GPIO的输出状态。如读取<code>GPIO1_IO01</code>的值（以i.MX6为例），那么就是要读取寄存器<code>0x0209c000</code>中bit1的值。</p>
 <ul>
 <li>在Kernel中可以使用<code>ioremap_nocache()</code>将该地址映射出来，然后去读取。</li>
 <li>在用户程序中，可以使用<code>mmap()</code>去读取。下面我们将使用<code>mmap()</code>函数读取该寄存器的值，并写一个专门的应用程序<code>regctl</code>来读写任意寄存器的值。
@@ -2216,7 +2216,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -2230,7 +2230,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.0k</span>
+    <span title="Site words total count">54.9k</span>
   
 </div>
 

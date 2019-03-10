@@ -87,13 +87,13 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="替换当前目录下所有字符串在Android的开发过程中，要将Android移植到自己的平台并将所有关于Android.mk字符串重命名为Mydroid.mk。1# sed -i s/&quot;Android.mk&quot;/&quot;Mydroid.mk&quot;/g `grep -rl &quot;Android.mk&quot; ./` 首先grep当前目录下包含Android.mk字符串的文件，然后输入给sed进行替换。注意包住grep命令的是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-1.png">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-2.png">
-<meta property="og:updated_time" content="2018-10-25T15:07:59.004Z">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84cf8e3a213b04179b2d6a">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84cf8e3a213b04179b2d6c">
+<meta property="og:updated_time" content="2019-03-10T08:49:52.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令">
 <meta name="twitter:description" content="替换当前目录下所有字符串在Android的开发过程中，要将Android移植到自己的平台并将所有关于Android.mk字符串重命名为Mydroid.mk。1# sed -i s/&quot;Android.mk&quot;/&quot;Mydroid.mk&quot;/g `grep -rl &quot;Android.mk&quot; ./` 首先grep当前目录下包含Android.mk字符串的文件，然后输入给sed进行替换。注意包住grep命令的是">
-<meta name="twitter:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-1.png">
+<meta name="twitter:image" content="https://pic.superbed.cn/item/5c84cf8e3a213b04179b2d6a">
 
 
 
@@ -402,10 +402,10 @@
 <h3 id="编译过程中的信息输出到文件"><a href="#编译过程中的信息输出到文件" class="headerlink" title="编译过程中的信息输出到文件"></a>编译过程中的信息输出到文件</h3><p><code>make 2&gt;&amp;1 | tee build.log</code></p>
 <h3 id="串口工具minicom的使用"><a href="#串口工具minicom的使用" class="headerlink" title="串口工具minicom的使用"></a>串口工具minicom的使用</h3><p><code>sudo minicom -s</code>启动minicom的配置选项，通过字母选择配置选项。</p>
 <ul>
-<li>启动后的minicom可以先按<code>ctrl+a</code>然后再按<code>z</code>可以出现帮助界面，之后选择对应字母可以配置minicom的功能。选择<code>Serial port setup</code>并做如下配置，可配置串口信息：<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-1.png" alt="图1"></li>
+<li>启动后的minicom可以先按<code>ctrl+a</code>然后再按<code>z</code>可以出现帮助界面，之后选择对应字母可以配置minicom的功能。选择<code>Serial port setup</code>并做如下配置，可配置串口信息：<br><img src="https://pic.superbed.cn/item/5c84cf8e3a213b04179b2d6a" alt="图1"></li>
 <li><p>如果说minicom只输入打印信息但是键盘无法输入，此时是由于打开硬件流控，设置<code>Hardware Flow Control</code>为<code>NO</code>即可。</p>
 </li>
-<li><p>打开minicom，然后按一下<code>ctrl + a</code>，再按<code>z</code>键，会出现下面这个界面，看到<code>Capture on/off</code>这项了吗，按下<code>l</code>键，命名要保存的log名称即可保存log。<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-2.png" alt="图1"></p>
+<li><p>打开minicom，然后按一下<code>ctrl + a</code>，再按<code>z</code>键，会出现下面这个界面，看到<code>Capture on/off</code>这项了吗，按下<code>l</code>键，命名要保存的log名称即可保存log。<br><img src="https://pic.superbed.cn/item/5c84cf8e3a213b04179b2d6c" alt="图1"></p>
 </li>
 </ul>
 <h3 id="的神奇用法"><a href="#的神奇用法" class="headerlink" title="! 的神奇用法"></a>! 的神奇用法</h3><p><a href="http://www.linuxidc.com/Linux/2015-05/117774.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2015-05/117774.htm</a><br><code>!</code>是可以指定执行前面执行过的第几条命令，通常跟<code>history</code>命令搭配。比如说经常会出现这种情况，有个命令<code>xxx</code>，此时你去执行它，比如:<code>xxx argv1 ~/work/other</code>。<br>这样会提示你没有权限执行 xxx 命令，正常你会重新做如下处理：<code>sudo xxx argv1 ~/work/other</code>。<br>但是此时我们可以使用<code>!!</code>来替代上次的命令，可以使用：<code>sudo !!</code>。<br>你可以运行<code>!-1</code>、<code>!-2</code>或者<code>!-7</code>等命令来执行你记录序列中的倒数第一条命令、倒数第二条命令已经倒数第七条等等。</p>
@@ -435,7 +435,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>Title:</span><a href="/Linux常用命令.html">Linux常用命令</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2018-10-25 / 23:10</p>
+  <p><span>Time:</span>2019-03-10 / 16:03</p>
   <p><span>Link:</span><a href="/Linux常用命令.html" title="Linux常用命令">http://wowothink.com/Linux常用命令.html</a>
     <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/Linux常用命令.html" aria-label="copy link success"></i></span>
   </p>
@@ -675,7 +675,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -689,7 +689,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.0k</span>
+    <span title="Site words total count">54.9k</span>
   
 </div>
 

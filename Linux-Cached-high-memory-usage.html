@@ -87,12 +87,10 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="本文主要解释cached占用内存高的原因，以及如何释放cached的内存占用。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20ate%20my%20ram-8.png">
-<meta property="og:updated_time" content="2018-10-10T13:00:45.181Z">
+<meta property="og:updated_time" content="2019-03-10T09:33:56.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Cached high memory usage">
 <meta name="twitter:description" content="本文主要解释cached占用内存高的原因，以及如何释放cached的内存占用。">
-<meta name="twitter:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20ate%20my%20ram-8.png">
 
 
 
@@ -340,7 +338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,181
+                  2,080
                 </span>
               
 
@@ -356,7 +354,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  9
                 </span>
               
             </div>
@@ -417,7 +415,7 @@
 </tbody>
 </table>
 <p>上面的<code>something</code>大致是<code>top</code>和<code>free</code>中显示的<code>buffers</code>和<code>cached</code>。正是由于你和Linux的术语不同，你可能会认为你内存越来越少。</p>
-<p>(7)、 我应该怎么去查看内存真正剩多少？<br>为了查看你应用程序不使用交换分区的话还剩多少内存，可用运行<code>free -m</code>来查看<code>available</code>这一列的内容。<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%20ate%20my%20ram-8.png" alt="free-m"><br>(在2016年之前安装的，查看<code>-/+ buffers/cache</code>的<code>free</code>列来替代)。该命令会以<code>M</code>的来显示。<br>如果你只是天真地看待<code>free</code>和<code>used</code>，你会认为你的内存是99%，当它只有47%！有关Linux计算为<code>available</code>的更详细和技术性描述，请参阅<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773" target="_blank" rel="noopener">the commit that added the field</a>.</p>
+<p>(7)、 我应该怎么去查看内存真正剩多少？<br>为了查看你应用程序不使用交换分区的话还剩多少内存，可用运行<code>free -m</code>来查看<code>available</code>这一列的内容。<br>(在2016年之前安装的，查看<code>-/+ buffers/cache</code>的<code>free</code>列来替代)。该命令会以<code>M</code>的来显示。<br>如果你只是天真地看待<code>free</code>和<code>used</code>，你会认为你的内存是99%，当它只有47%！有关Linux计算为<code>available</code>的更详细和技术性描述，请参阅<a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773" target="_blank" rel="noopener">the commit that added the field</a>.</p>
 <p>(8)、 什么情况下我才担心？<br>一个健康的的Linux系统，在运行一段时间后，有足够的内存，并且会显示以下预期和无害的行为：</p>
 <ul>
 <li><code>free</code>的memory接近与0；</li>
@@ -434,7 +432,7 @@
 <p>(9)、 我要怎样确认上面所说的？<br>有关更多详细信息以及如何试用磁盘缓存以显示此处所述的效果，请参阅<a href="https://www.linuxatemyram.com/play.html" target="_blank" rel="noopener">此页面</a>。 很少有东西让你欣赏磁盘缓存，而不仅仅是在自己的硬件上测量数量级的加速！</p>
 <hr>
 <h1 id="验证磁盘缓存是否可回收"><a href="#验证磁盘缓存是否可回收" class="headerlink" title="验证磁盘缓存是否可回收"></a>验证磁盘缓存是否可回收</h1><p>在 <a href="https://www.linuxatemyram.com/play.html" target="_blank" rel="noopener">https://www.linuxatemyram.com/play.html</a> 中，使用多种方法来验证磁盘缓存的作用以及磁盘缓存的回收。</p>
-<p>磁盘缓存的某些部分不能丢弃，甚至不能容纳新的应用程序。这包括已被某些应用程序<code>mlocked</code>的<code>mmap&#39;d</code>页面，尚未写入存储区的脏页以及存储在tmpfs中的数据（包括/ dev / shm，用于共享内存）。mmap’d，mlocked页面卡在页面缓存中。肮脏的页面大部分将很快写出来。如果可能的话，tmpfs中的数据将被换出。<br>关于不能回收的磁盘缓存，可以参照：<br><a href="http://liwei.life/2016/04/26/linux%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84cache%E7%9C%9F%E7%9A%84%E8%83%BD%E8%A2%AB%E5%9B%9E%E6%94%B6%E4%B9%88%EF%BC%9F/" target="_blank" rel="noopener">http://liwei.life/2016/04/26/linux%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84cache%E7%9C%9F%E7%9A%84%E8%83%BD%E8%A2%AB%E5%9B%9E%E6%94%B6%E4%B9%88%EF%BC%9F/</a></p>
+<p>磁盘缓存的某些部分不能丢弃，甚至不能容纳新的应用程序。这包括已被某些应用程序<code>mlocked</code>的<code>mmap&#39;d</code>页面，尚未写入存储区的脏页以及存储在tmpfs中的数据（包括/ dev / shm，用于共享内存）。mmap’d，mlocked页面卡在页面缓存中。肮脏的页面大部分将很快写出来。如果可能的话，tmpfs中的数据将被换出。</p>
 <hr>
 <h1 id="drop-caches"><a href="#drop-caches" class="headerlink" title="drop_caches"></a>drop_caches</h1><p>关于这部分的解释，可以参照<code>&lt;Kernel_Dir&gt;/Documentation/sysctl/vm.txt</code>文件：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">==============================================================</span><br><span class="line"></span><br><span class="line">drop_caches</span><br><span class="line"></span><br><span class="line">Writing to <span class="keyword">this</span> will cause the kernel to drop clean caches, as well as</span><br><span class="line">reclaimable slab objects like dentries <span class="keyword">and</span> inodes.  Once dropped, their</span><br><span class="line">memory becomes <span class="built_in">free</span>.</span><br><span class="line"></span><br><span class="line">To <span class="built_in">free</span> pagecache:</span><br><span class="line">    echo <span class="number">1</span> &gt; /proc/sys/vm/drop_caches</span><br><span class="line">To <span class="built_in">free</span> reclaimable slab objects (includes dentries <span class="keyword">and</span> inodes):</span><br><span class="line">    echo <span class="number">2</span> &gt; /proc/sys/vm/drop_caches</span><br><span class="line">To <span class="built_in">free</span> slab objects <span class="keyword">and</span> pagecache:</span><br><span class="line">    echo <span class="number">3</span> &gt; /proc/sys/vm/drop_caches</span><br><span class="line"></span><br><span class="line">This is a non-destructive operation <span class="keyword">and</span> will <span class="keyword">not</span> <span class="built_in">free</span> any dirty objects.</span><br><span class="line">To increase the number of objects freed by <span class="keyword">this</span> operation, the user may run</span><br><span class="line">`sync' prior to writing to /proc/sys/vm/drop_caches.  This will minimize the</span><br><span class="line">number of dirty objects on the system <span class="keyword">and</span> create more candidates to be</span><br><span class="line">dropped.</span><br><span class="line"></span><br><span class="line">This file is <span class="keyword">not</span> a means to control the growth of the various kernel caches</span><br><span class="line">(inodes, dentries, pagecache, etc...)  These objects are automatically</span><br><span class="line">reclaimed by the kernel when memory is needed elsewhere on the system.</span><br><span class="line"></span><br><span class="line">Use of <span class="keyword">this</span> file can cause performance problems.  Since it discards cached</span><br><span class="line">objects, it may cost a significant amount of I/O <span class="keyword">and</span> CPU to recreate the</span><br><span class="line">dropped objects, especially <span class="keyword">if</span> they were under heavy use.  Because of <span class="keyword">this</span>,</span><br><span class="line">use outside of a testing <span class="keyword">or</span> debugging environment is <span class="keyword">not</span> recommended.</span><br><span class="line"></span><br><span class="line">You may see informational messages in your kernel <span class="built_in">log</span> when <span class="keyword">this</span> file is</span><br><span class="line">used:</span><br><span class="line"></span><br><span class="line">    cat (<span class="number">1234</span>): drop_caches: <span class="number">3</span></span><br><span class="line"></span><br><span class="line">These are informational only.  They <span class="keyword">do</span> <span class="keyword">not</span> mean that anything is wrong</span><br><span class="line">with your system.  To disable them, echo <span class="number">4</span> (bit <span class="number">3</span>) into drop_caches.</span><br></pre></td></tr></table></figure></p>
 <p>清空<code>slab</code>和<code>page cached</code>，可以使用如下命令：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># free &amp;&amp; sync &amp;&amp; echo 3 &gt; /proc/sys/vm/drop_caches &amp;&amp; free</span></span><br></pre></td></tr></table></figure></p>
@@ -450,7 +448,6 @@
 <li><a href="https://www.linuxatemyram.com/" target="_blank" rel="noopener">https://www.linuxatemyram.com/</a></li>
 <li><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773" target="_blank" rel="noopener">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773</a></li>
 <li><a href="https://www.linuxatemyram.com/play.html" target="_blank" rel="noopener">https://www.linuxatemyram.com/play.html</a></li>
-<li><a href="http://liwei.life/2016/04/26/linux%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84cache%E7%9C%9F%E7%9A%84%E8%83%BD%E8%A2%AB%E5%9B%9E%E6%94%B6%E4%B9%88%EF%BC%9F/" target="_blank" rel="noopener">http://liwei.life/2016/04/26/linux%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84cache%E7%9C%9F%E7%9A%84%E8%83%BD%E8%A2%AB%E5%9B%9E%E6%94%B6%E4%B9%88%EF%BC%9F/</a></li>
 <li><a href="https://unix.stackexchange.com/questions/87908/how-do-you-empty-the-buffers-and-cache-on-a-linux-system" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/87908/how-do-you-empty-the-buffers-and-cache-on-a-linux-system</a></li>
 <li><a href="http://linuxperf.com/?p=142" target="_blank" rel="noopener">http://linuxperf.com/?p=142</a></li>
 </ul>
@@ -469,7 +466,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>Title:</span><a href="/Linux-Cached-high-memory-usage.html">Linux Cached high memory usage</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2018-10-10 / 21:10</p>
+  <p><span>Time:</span>2019-03-10 / 17:03</p>
   <p><span>Link:</span><a href="/Linux-Cached-high-memory-usage.html" title="Linux Cached high memory usage">http://wowothink.com/Linux-Cached-high-memory-usage.html</a>
     <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/Linux-Cached-high-memory-usage.html" aria-label="copy link success"></i></span>
   </p>
@@ -709,7 +706,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -723,7 +720,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.0k</span>
+    <span title="Site words total count">54.9k</span>
   
 </div>
 

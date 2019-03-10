@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="需求：　　Linux发生panic之后，如果/proc/sys/kernel/panic没有值的话，会一直停留在panic的界面。如果有值，则会自动重启。在一般的客户版本中，一般都会设置成自动重启，但这样的话就无法查看重启的原因了。　　为了调查问题，经常需要保留现场。因此，希望在重启之前把相应的信息以文件的形式保存下来。但是如果是文件系统发生panic，这个方案明显不行。我们可以将现场的信息暂时保">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%20Crash%20Dump-1.png">
-<meta property="og:updated_time" content="2018-09-23T08:05:40.347Z">
+<meta property="og:image" content="https://pic.superbed.cn/item/5c84dc843a213b04179be1ab">
+<meta property="og:updated_time" content="2019-03-10T09:45:08.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Kernel Crash Dump">
 <meta name="twitter:description" content="需求：　　Linux发生panic之后，如果/proc/sys/kernel/panic没有值的话，会一直停留在panic的界面。如果有值，则会自动重启。在一般的客户版本中，一般都会设置成自动重启，但这样的话就无法查看重启的原因了。　　为了调查问题，经常需要保留现场。因此，希望在重启之前把相应的信息以文件的形式保存下来。但是如果是文件系统发生panic，这个方案明显不行。我们可以将现场的信息暂时保">
-<meta name="twitter:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%20Crash%20Dump-1.png">
+<meta name="twitter:image" content="https://pic.superbed.cn/item/5c84dc843a213b04179be1ab">
 
 
 
@@ -391,7 +391,7 @@
 <p>(4)、重启之后，判断是否需要保存log是通过申请到的3M内存区域的前4个字节<code>(magic)</code>字段，如果这个字段为<code>XXX_LKCD_MAGIC</code>，那么驱动中需要创建<code>/proc</code>接口供应用程序读写并保存log到文件系统中去。</p>
 <p>(5)、如第(4)步所说的，应用程序通过<code>/proc</code>接口来获取数据并以文件的形式保存起来。</p>
 <hr>
-<h1 id="详细流程图"><a href="#详细流程图" class="headerlink" title="详细流程图"></a>详细流程图</h1><p><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%20Crash%20Dump-1.png" alt="流程图"></p>
+<h1 id="详细流程图"><a href="#详细流程图" class="headerlink" title="详细流程图"></a>详细流程图</h1><p><img src="https://pic.superbed.cn/item/5c84dc843a213b04179be1ab" alt="流程图"></p>
 <hr>
 <h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><p>在<code>Kernel_SrcDir/drivers/</code>目录下创建<code>xxx_lkcd/</code>的目录文件，在里面添加如下文件：</p>
 <ul>
@@ -436,7 +436,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>Title:</span><a href="/Linux-Kernel-Crash-Dump.html">Linux Kernel Crash Dump</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2018-09-23 / 16:09</p>
+  <p><span>Time:</span>2019-03-10 / 17:03</p>
   <p><span>Link:</span><a href="/Linux-Kernel-Crash-Dump.html" title="Linux Kernel Crash Dump">http://wowothink.com/Linux-Kernel-Crash-Dump.html</a>
     <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/Linux-Kernel-Crash-Dump.html" aria-label="copy link success"></i></span>
   </p>
@@ -676,7 +676,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -690,7 +690,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.0k</span>
+    <span title="Site words total count">54.9k</span>
   
 </div>
 

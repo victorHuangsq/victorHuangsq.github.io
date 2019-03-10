@@ -87,13 +87,10 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="在项目初期，NXP提供了i.MX7ul的BSP包，里面包含了大量第三方平台的配置以及本项目未使用的功能。因此，需要在此基础上进行kernel的裁剪。本文主要讲在不影响主要功能的前提下进行Linux Kernel裁剪的步骤。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E8%A3%81%E5%89%AA--%E4%BD%BF%E7%94%A8menuconfig--1.png">
-<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E8%A3%81%E5%89%AA--%E4%BD%BF%E7%94%A8menuconfig--2.png">
-<meta property="og:updated_time" content="2018-09-23T08:05:40.346Z">
+<meta property="og:updated_time" content="2019-03-10T10:03:12.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Kernel裁剪--menuconfig的使用">
 <meta name="twitter:description" content="在项目初期，NXP提供了i.MX7ul的BSP包，里面包含了大量第三方平台的配置以及本项目未使用的功能。因此，需要在此基础上进行kernel的裁剪。本文主要讲在不影响主要功能的前提下进行Linux Kernel裁剪的步骤。">
-<meta name="twitter:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E8%A3%81%E5%89%AA--%E4%BD%BF%E7%94%A8menuconfig--1.png">
 
 
 
@@ -341,7 +338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  457
+                  455
                 </span>
               
 
@@ -386,10 +383,10 @@
 <hr>
 <h1 id="替换-config为defconfig"><a href="#替换-config为defconfig" class="headerlink" title="替换.config为defconfig"></a>替换.config为defconfig</h1><p>将 <code>kernel_imx7/</code> 目录下的<code>.config</code>拷贝到 <code>arch/arm64/configs/xxx_defconfig</code>做这一步是为了后面使用 <code>make menuconfig</code> 图形化配置生成的<code>.config</code>和<code>xxx_defconfig</code>直接对比，对比的内容可以保证是自己通过图形化配置修改过的。</p>
 <hr>
-<h1 id="图形化配置"><a href="#图形化配置" class="headerlink" title="图形化配置"></a>图形化配置</h1><p>执行 <code>make menuconfig ARCH=arm xxx_defconfig</code><br>这里会将<code>xxx_defconfig</code>和<code>kernel_imx7/</code>下所有的<code>Kconfig</code>生成图形化配置，如下：<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E8%A3%81%E5%89%AA--%E4%BD%BF%E7%94%A8menuconfig--1.png" alt="Linux Kernel裁剪--使用menuconfig--1"></p>
+<h1 id="图形化配置"><a href="#图形化配置" class="headerlink" title="图形化配置"></a>图形化配置</h1><p>执行 <code>make menuconfig ARCH=arm xxx_defconfig</code><br>这里会将<code>xxx_defconfig</code>和<code>kernel_imx7/</code>下所有的<code>Kconfig</code>生成图形化配置。</p>
 <p>操作方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Arrow keys navigate the menu.  &lt;Enter&gt; selects submenus ---&gt; (or empty submenus ----).  Highlighted letters are hotkeys.</span><br><span class="line">Pressing &lt;Y&gt; includes, &lt;N&gt; excludes, &lt;M&gt; modularizes features.  Press &lt;Esc&gt;&lt;Esc&gt; to exit, &lt;?&gt; for Help, &lt;/&gt; for Search.</span><br><span class="line">Legend: [*] built-in  [ ] excluded  &lt;M&gt; module  &lt; &gt; module capable</span><br></pre></td></tr></table></figure></p>
 <p>比如说，这里面的“Device Drivers”下，有个”USB support”，我们的项目中不需要这个功能，可以将其设置为N，然后保存到<code>.config</code>中。<br>这样，我们就可以将更新后的<code>.config</code>文件再次替换<code>xxx_defconfig</code>，这次修改的，就是去掉”USB support”相关的配置。</p>
-<p>如果我们不确定某一项是作何使用的，可以通过”h”调出帮助界面，比如说还是”USB support”，他的帮助信息如下：<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E8%A3%81%E5%89%AA--%E4%BD%BF%E7%94%A8menuconfig--2.png" alt="Linux Kernel裁剪--使用menuconfig--帮助信息"></p>
+<p>如果我们不确定某一项是作何使用的，可以通过”h”调出帮助界面，比如说还是”USB support”，他的帮助信息如下：</p>
 <p>建议每次按照机能修改，每改一次做一次提交，保证kernel能正常的启动，并进行详细的说明。不要一次性改太多，免得以后调查问题回退不好定位。多次执行第4步，直至初步将kernel大致裁剪完毕。</p>
 
       
@@ -406,7 +403,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>Title:</span><a href="/Linux Kernel裁剪--menuconfig的使用.html">Linux Kernel裁剪--menuconfig的使用</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2018-09-23 / 16:09</p>
+  <p><span>Time:</span>2019-03-10 / 18:03</p>
   <p><span>Link:</span><a href="/Linux Kernel裁剪--menuconfig的使用.html" title="Linux Kernel裁剪--menuconfig的使用">http://wowothink.com/Linux Kernel裁剪--menuconfig的使用.html</a>
     <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/Linux Kernel裁剪--menuconfig的使用.html" aria-label="copy link success"></i></span>
   </p>
@@ -646,7 +643,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -660,7 +657,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.0k</span>
+    <span title="Site words total count">54.9k</span>
   
 </div>
 
