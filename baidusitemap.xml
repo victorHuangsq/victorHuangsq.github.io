@@ -73,16 +73,16 @@
     <loc>http://wowothink.com/%E9%85%8D%E7%BD%AEUSB-Host%E5%92%8CUSB-Device-full-speed%E5%B7%A5%E4%BD%9C.html</loc>
     <lastmod>2018-09-23T08:05:40.358Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/%E8%A7%A3%E5%8E%8B%E6%89%93%E5%8C%85img%E6%96%87%E4%BB%B6.html</loc>
-    <lastmod>2018-09-23T08:05:40.357Z</lastmod>
-  </url>  <url>
     <loc>http://wowothink.com/%E6%A8%A1%E6%8B%9Fkernel-panic%E5%B9%B6%E6%89%93%E5%8D%B0%E5%A0%86%E6%A0%88%E4%BF%A1%E6%81%AF.html</loc>
     <lastmod>2018-09-23T08:05:40.357Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/%E5%9C%A8Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5.html</loc>
-    <lastmod>2018-09-23T08:05:40.356Z</lastmod>
+    <loc>http://wowothink.com/%E8%A7%A3%E5%8E%8B%E6%89%93%E5%8C%85img%E6%96%87%E4%BB%B6.html</loc>
+    <lastmod>2018-09-23T08:05:40.357Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/%E6%9F%A5%E6%89%BEKernel%E4%B8%AD%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6.html</loc>
+    <lastmod>2018-09-23T08:05:40.356Z</lastmod>
+  </url>  <url>
+    <loc>http://wowothink.com/%E5%9C%A8Makefile%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5.html</loc>
     <lastmod>2018-09-23T08:05:40.356Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/%E6%89%93%E5%8C%85ko%E6%96%87%E4%BB%B6%E5%88%B0image%E4%B8%AD.html</loc>
@@ -97,10 +97,10 @@
     <loc>http://wowothink.com/%E4%BF%AE%E6%94%B9xxx-defconfig%E6%B2%A1%E6%9C%89%E8%B5%B7%E6%95%88%E6%9E%9C%E5%8E%9F%E5%9B%A0%E5%88%86%E6%9E%90.html</loc>
     <lastmod>2018-09-23T08:05:40.355Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/service%E4%B8%80%E7%9B%B4%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E5%8E%9F%E5%9B%A0.html</loc>
+    <loc>http://wowothink.com/system_core%20%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F.html</loc>
     <lastmod>2018-09-23T08:05:40.354Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/system_core%20%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F.html</loc>
+    <loc>http://wowothink.com/service%E4%B8%80%E7%9B%B4%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E5%8E%9F%E5%9B%A0.html</loc>
     <lastmod>2018-09-23T08:05:40.354Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/lockup-watchdogs-rcu-stall-detector.html</loc>
@@ -148,13 +148,13 @@
     <loc>http://wowothink.com/Linux%20Kernel%E4%BC%98%E5%8C%96--initcall_debug.html</loc>
     <lastmod>2018-09-23T08:05:40.345Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/Android%E5%85%A8%E7%BC%96%E7%BC%96%E8%AF%91kernel%E5%92%8Cuboot.html</loc>
+    <loc>http://wowothink.com/Kernel%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.html</loc>
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
   </url>  <url>
     <loc>http://wowothink.com/Android%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B.html</loc>
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
   </url>  <url>
-    <loc>http://wowothink.com/Kernel%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F.html</loc>
+    <loc>http://wowothink.com/Android%E5%85%A8%E7%BC%96%E7%BC%96%E8%AF%91kernel%E5%92%8Cuboot.html</loc>
     <lastmod>2018-09-23T08:05:40.344Z</lastmod>
   </url>
 </urlset>
