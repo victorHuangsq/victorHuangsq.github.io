@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ubuntu工具,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在vi编辑器中使用sudo命令:w !sudo tee %命令:w !{cmd}，让vim执行一个外部命令{cmd}，然后把当前缓冲区的内容从stdin传入。tee是一个把stdin保存到文件的小工具。 而%，是vim当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。 返回上次的位置ctrl + o: 返回上次光标位置；ctrl">
+<meta name="keywords" content="ubuntu工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vi常用命令">
+<meta property="og:url" content="http://wowothink.com/5e60c079/index.html">
+<meta property="og:site_name" content="wowothink">
+<meta property="og:description" content="在vi编辑器中使用sudo命令:w !sudo tee %命令:w !{cmd}，让vim执行一个外部命令{cmd}，然后把当前缓冲区的内容从stdin传入。tee是一个把stdin保存到文件的小工具。 而%，是vim当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。 返回上次的位置ctrl + o: 返回上次光标位置；ctrl">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-17T08:23:55.053Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vi常用命令">
+<meta name="twitter:description" content="在vi编辑器中使用sudo命令:w !sudo tee %命令:w !{cmd}，让vim执行一个外部命令{cmd}，然后把当前缓冲区的内容从stdin传入。tee是一个把stdin保存到文件的小工具。 而%，是vim当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。 返回上次的位置ctrl + o: 返回上次光标位置；ctrl">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wowothink.com/5e60c079/">
+
+
+
+
+
+  <title>vi常用命令 | wowothink</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wowothink</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">thinking all the time</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/5e60c079/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic.superbed.cn/item/5c84e39e3a213b04179c44fd">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wowothink">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vi常用命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		    
+			
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T22:00:43+08:00">
+                2018-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/ubuntu工具/" itemprop="url" rel="index">
+                    <span itemprop="name">ubuntu工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  725
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="在vi编辑器中使用sudo命令"><a href="#在vi编辑器中使用sudo命令" class="headerlink" title="在vi编辑器中使用sudo命令"></a>在vi编辑器中使用sudo命令</h3><p><code>:w !sudo tee %</code><br>命令<code>:w !{cmd}</code>，让<code>vim</code>执行一个外部命令<code>{cmd}</code>，然后把当前缓冲区的内容从<code>stdin</code>传入。<code>tee</code>是一个把<code>stdin</code>保存到文件的小工具。 而<code>%</code>，是<code>vim</code>当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。</p>
+<h3 id="返回上次的位置"><a href="#返回上次的位置" class="headerlink" title="返回上次的位置"></a>返回上次的位置</h3><p><code>ctrl + o</code>: 返回上次光标位置；<br><code>ctrl + i</code>: 前进到光标的位置；</p>
+<h3 id="排版对齐"><a href="#排版对齐" class="headerlink" title="排版对齐"></a>排版对齐</h3><p><code>ctrl +v</code>：选择需要对齐的行，之后按<code>=</code>即可对齐。</p>
+<h3 id="字符串替换"><a href="#字符串替换" class="headerlink" title="字符串替换"></a>字符串替换</h3><p><code>:%s/aaaa/bbbb/g</code>:替换每一行中所有<code>aaaa</code>为<code>bbbb</code>，<a href="http://www.cnblogs.com/tovep/articles/2715803.html。" target="_blank" rel="noopener">http://www.cnblogs.com/tovep/articles/2715803.html。</a></p>
+<h3 id="快速选中单词"><a href="#快速选中单词" class="headerlink" title="快速选中单词"></a>快速选中单词</h3><p>光标移动到要选中的单词开头，按<code>v</code>按<code>e</code>。</p>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><p><code>u</code>: 撤销；<br><code>ctrl + r</code>: 取消撤销；</p>
+<a id="more"></a>
+<h3 id="16进制显示"><a href="#16进制显示" class="headerlink" title="16进制显示"></a>16进制显示</h3><p><code>:%!xxd</code></p>
+<h3 id="16进制修改"><a href="#16进制修改" class="headerlink" title="16进制修改"></a>16进制修改</h3><p><code>:%!xxd -r</code>可以反向写入，以下内容为测试验证过程：<br>使用下面的<code>dd</code>语句，可以将<code>/dev/zero</code>产生的八进制<code>\000</code>(0x0)转换为八进制<code>\377</code>(0xff)并写入<code>temp</code>文件中，如下：<br><code>dd if=/dev/zero bs=1 count=4 | tr &quot;\000&quot; &quot;\377&quot; &gt; temp</code></p>
+<p>vi查看<code>temp</code>文件得到:<code>ÿÿÿÿ</code>，总共4个字节，<code>[noeol]</code>不包含<code>EOL</code>。<br>使用16进制<code>%!xxd</code>查看得到如下，可以看到最后多了一个字节<code>0a</code>表示<code>EOL</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0000000: ffff ffff 0a                             .....</span><br></pre></td></tr></table></figure></p>
+<p>比如说我要将这里修改成<code>a0a1 a2a3</code>，可以直接用vi编辑。然后<code>:%!xxd -r</code>反向写入再<code>:x</code>保存退出。但是查看大小变为5个字节了，莫名其妙多出1个字节，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw-rw-r-- 1 victor victor    5 11月  2 09:52 temp</span><br></pre></td></tr></table></figure></p>
+<p>具体原因详见：<a href="https://superuser.com/questions/745111/why-is-vim-adding-a-newline-is-this-a-convention" target="_blank" rel="noopener">https://superuser.com/questions/745111/why-is-vim-adding-a-newline-is-this-a-convention</a><br>要解决这个问题，就是在反向写入后保存前执行<code>:set binary</code> 和 <code>:set noeol</code>。</p>
+<h3 id="高亮所匹配的单词"><a href="#高亮所匹配的单词" class="headerlink" title="高亮所匹配的单词"></a>高亮所匹配的单词</h3><p><code>:set hlsearch</code></p>
+<h3 id="光标所处单词查找"><a href="#光标所处单词查找" class="headerlink" title="光标所处单词查找"></a>光标所处单词查找</h3><p><code>g + d</code>: 快速选中光标所在单词，按<code>n</code>可查找。</p>
+<h3 id="快速跳到下个单词"><a href="#快速跳到下个单词" class="headerlink" title="快速跳到下个单词"></a>快速跳到下个单词</h3><p><code>w</code></p>
+<h3 id="删除光标所在单词"><a href="#删除光标所在单词" class="headerlink" title="删除光标所在单词"></a>删除光标所在单词</h3><p><code>c + w</code></p>
+<h3 id="快速跳转到文件尾"><a href="#快速跳转到文件尾" class="headerlink" title="快速跳转到文件尾"></a>快速跳转到文件尾</h3><p><code>G</code>: 大写的<code>G</code>，通常情况下，在kernel中，很多初始化动作都是在文件尾做的，该命令可以快速跳转到文件尾。</p>
+<h3 id="匹配括号"><a href="#匹配括号" class="headerlink" title="匹配括号"></a>匹配括号</h3><p><code>%</code>: 比如一个很长的<code>if</code>语句，里面有多个括号，可以使用<code>%</code>找到与之相匹配的括号，当然也包括<code>#ifdef</code>和<code>#endif</code>。</p>
+<h3 id="列替换一个字符"><a href="#列替换一个字符" class="headerlink" title="列替换一个字符"></a>列替换一个字符</h3><p><code>ctrl + v</code>: 选中需要替换的列，按<code>r</code> + 输入你想要替换的一个字符即可。</p>
+<h3 id="列替换多个字符"><a href="#列替换多个字符" class="headerlink" title="列替换多个字符"></a>列替换多个字符</h3><p><code>ctrl + v</code>: 选中需要替换的列，按大写<code>I</code>，插入你想要的多个字符，按<code>q</code>回到正常模式，按回车即可。</p>
+<h3 id="删除包含特定字符的行"><a href="#删除包含特定字符的行" class="headerlink" title="删除包含特定字符的行"></a>删除包含特定字符的行</h3><p><code>:g/pattern/d</code></p>
+<h3 id="删除不包含指定字符的行"><a href="#删除不包含指定字符的行" class="headerlink" title="删除不包含指定字符的行"></a>删除不包含指定字符的行</h3><p><code>:v/pattern/d</code>或<code>:g!/pattern/d</code></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS�� sweetalert ���޸�·�� -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>Title:</span><a href="/5e60c079/">vi常用命令</a></p>
+  <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
+  <p><span>Time:</span>2019-03-17 / 16:03</p>
+  <p><span>Link:</span><a href="/5e60c079/" title="vi常用命令">http://wowothink.com/5e60c079/</a>
+    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/5e60c079/" aria-label="copy link success"></i></span>
+  </p>
+  <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: 'copy link success',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+
+      
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu工具/" rel="tag"><i class="fa fa-tag"></i> ubuntu工具</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/cae6ff88/" rel="next" title="Ubuntu工作环境搭建">
+                <i class="fa fa-chevron-left"></i> Ubuntu工作环境搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/d0edc1ed/" rel="prev" title="Linux常用命令">
+                Linux常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://pic.superbed.cn/item/5c84e39e3a213b04179c44fd" alt="Victor Huang">
+            
+              <p class="site-author-name" itemprop="name">Victor Huang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hsq_encourage@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/encourage2011" target="_blank" title="CSDN博客">
+                      
+                        <i class="fa fa-fw fa-crosshairs"></i>CSDN博客</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在vi编辑器中使用sudo命令"><span class="nav-number">1.</span> <span class="nav-text">在vi编辑器中使用sudo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回上次的位置"><span class="nav-number">2.</span> <span class="nav-text">返回上次的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排版对齐"><span class="nav-number">3.</span> <span class="nav-text">排版对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串替换"><span class="nav-number">4.</span> <span class="nav-text">字符串替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速选中单词"><span class="nav-number">5.</span> <span class="nav-text">快速选中单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">6.</span> <span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制显示"><span class="nav-number">7.</span> <span class="nav-text">16进制显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制修改"><span class="nav-number">8.</span> <span class="nav-text">16进制修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮所匹配的单词"><span class="nav-number">9.</span> <span class="nav-text">高亮所匹配的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标所处单词查找"><span class="nav-number">10.</span> <span class="nav-text">光标所处单词查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳到下个单词"><span class="nav-number">11.</span> <span class="nav-text">快速跳到下个单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除光标所在单词"><span class="nav-number">12.</span> <span class="nav-text">删除光标所在单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳转到文件尾"><span class="nav-number">13.</span> <span class="nav-text">快速跳转到文件尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配括号"><span class="nav-number">14.</span> <span class="nav-text">匹配括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换一个字符"><span class="nav-number">15.</span> <span class="nav-text">列替换一个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换多个字符"><span class="nav-number">16.</span> <span class="nav-text">列替换多个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除包含特定字符的行"><span class="nav-number">17.</span> <span class="nav-text">删除包含特定字符的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不包含指定字符的行"><span class="nav-number">18.</span> <span class="nav-text">删除不包含指定字符的行</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Victor Huang</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">55.0k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
