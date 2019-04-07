@@ -249,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/21d2626b/">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/1b13bd9e/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Victor Huang">
@@ -268,16 +268,12 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/21d2626b/" itemprop="url">有趣的网站记录</a></h1>
+                <a class="post-title-link" href="/1b13bd9e/" itemprop="url">应用程序打印kernel log</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
 		    
-              <i class="fa fa-thumb-tack"></i>
-              <font color="7D26CD">置顶</font>
-              <span class="post-meta-divider">|</span>
-            
 			
             
               <span class="post-meta-item-icon">
@@ -286,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T21:50:19+08:00">
-                2018-09-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T20:49:48+08:00">
+                2019-04-07
               </time>
             
 
@@ -309,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/网站记录/" itemprop="url" rel="index">
-                    <span itemprop="name">网站记录</span>
+                  <a href="/categories/Linux-Kernel/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux Kernel</span>
                   </a>
                 </span>
 
@@ -340,7 +336,372 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  205
+                  977
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h2><p>有时候需要监控应用程序关键动作，因此需要将应用程序的log写入到kernel log的缓冲区去。另外，有时候为了查看应用程序和kernel的时序，需要结合应用程序打印的log和kernel的log来查看前后关系。关于打印输出，<a href="https://elinux.org/Debugging_by_printing" target="_blank" rel="noopener">https://elinux.org/Debugging_by_printing</a> 做了详细的介绍。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/1b13bd9e/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    <div>
+      
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/61eb1c3c/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic.superbed.cn/item/5c84e39e3a213b04179c44fd">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wowothink">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/61eb1c3c/" itemprop="url">init进程启动失败调查</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		    
+			
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T20:42:22+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
+                    <span itemprop="name">碰到的问题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  620
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在做新版本kernel bring up的时候，由于我们没有使用到网络的功能，因此一上来就将内核的<code>CONFIG_NET</code>配置disable掉。<br>kernel启动后在去启动<code>init</code>进程的时候总是启动失败，报panic重启，每次启动都这样，panic log如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">[   22.476539] (EE) init: /init.rc: 193: invalid option &apos;seclabel&apos;</span><br><span class="line">[   22.482520] (EE) init: /init.rc: 194: invalid option &apos;seclabel&apos;</span><br><span class="line">[   22.490153] init (1): /proc/1/oom_adj is deprecated, please use /proc/1/oom_score_adj instead.</span><br><span class="line">[   22.498841] (!!) init: starting &apos;ueventd&apos;</span><br><span class="line">[   27.222598] (EE) init: Wait for file /dev/block/mmcblk0p1 timeout</span><br><span class="line">[   27.228916] (EE) init: command &apos;mount ext4 /dev/block/mmcblk0p1 /system wait ro journal_checksum&apos;, r=-1</span><br><span class="line">[   27.238347] (!!) init: processing action 0x2be0ca50 (wait_for_coldboot_done)</span><br><span class="line">[   32.227859] (EE) init: Timed out waiting for /dev/.coldboot_done</span><br><span class="line">[   32.233901] (EE) init: command &apos;wait_for_coldboot_done&apos;, r=-1</span><br><span class="line">[   32.241095] (!!) init: processing action 0x2be0cae0 (property_init)</span><br><span class="line">[   32.247753] (!!) init: processing action 0x2be0cb70 (keychord_init)</span><br><span class="line">[   32.254054] (!!) init: processing action 0x2be0cc00 (console_init)</span><br><span class="line">[   32.260292] (!!) init: processing action 0x2be0cc90 (set_init_properties)</span><br><span class="line">[   32.267130] (!!) init: processing action 0x2be091f0 (init)</span><br><span class="line">[   32.273313] (EE) init: command &apos;write /proc/sys/kernel/hung_task_timeout_secs 0&apos;, r=-2</span><br><span class="line">[   32.281666] (EE) init: command &apos;write /dev/cpuctl/cpu.shares 1024&apos;, r=-22</span><br><span class="line">[   37.247949] (EE) init: command &apos;chown root root /data/lost+found&apos;, r=-2</span><br><span class="line">[   37.254615] (EE) init: command &apos;chmod 0770 /data/lost+found&apos;, r=-2</span><br><span class="line">[   37.261054] (!!) init: processing action 0x2be0cd20 (property_service_init)</span><br><span class="line">[   37.268206] (EE) init: Failed to open socket &apos;property_service&apos;: Function not implemented</span><br><span class="line">[   37.276412] (!!) init: processing action 0x2be0cdb0 (signal_init)</span><br><span class="line">[   37.282541] (!!) init: processing action 0x2be0ce40 (check_startup)</span><br><span class="line">[   37.288831] (EE) init: init startup failure</span><br><span class="line">[   37.293454] Kernel panic - not syncing: Attempted to kill init! exitcode=0x00000100</span><br><span class="line">[   37.293454] </span><br><span class="line">[   37.302597] CPU: 0 PID: 1 Comm: init Not tainted 4.14.62-ge4e3cbe-dirty #3</span><br><span class="line">[   37.309472] Hardware name: Freescale i.MX8QXP MEK (DT)</span><br><span class="line">[   37.314613] Call trace:</span><br><span class="line">[   37.317069] [&lt;ffff0000080899e8&gt;] dump_backtrace+0x0/0x3f8</span><br><span class="line">[   37.322472] [&lt;ffff000008089df4&gt;] show_stack+0x14/0x20</span><br><span class="line">[   37.327528] [&lt;ffff0000089e5338&gt;] dump_stack+0x98/0xb8</span><br><span class="line">[   37.332584] [&lt;ffff0000080cacc0&gt;] panic+0x114/0x27c</span><br><span class="line">[   37.337378] [&lt;ffff0000080cec38&gt;] complete_and_exit+0x0/0x20</span><br><span class="line">[   37.342955] [&lt;ffff0000080cec9c&gt;] do_group_exit+0x34/0x98</span><br><span class="line">[   37.348272] [&lt;ffff0000080ced10&gt;] __wake_up_parent+0x0/0x28</span><br><span class="line">[   37.353763] Exception stack(0xffff000008043ec0 to 0xffff000008044000)</span><br><span class="line">[   37.360212] 3ec0: 0000000000000001 0000000000000000 0000000000000001 000000002bdf26f0</span><br><span class="line">[   37.368046] 3ee0: 0000000000000048 0000000000000000 0000000000000001 7f7f7f7f7f7f7f7f</span><br><span class="line">[   37.375883] 3f00: 000000000000005e 756c696166207075 696e692029454528 2074696e69203a74</span><br><span class="line">[   37.383719] 3f20: 2070757472617473 0a6572756c696166 0000000000000022 0000000000000000</span><br><span class="line">[   37.391554] 3f40: 0000000000000000 0000000000000003 0000000000000000 0000000000000001</span><br><span class="line">[   37.399391] 3f60: 0000000000000001 0000000000000001 00000000004efe68 0000000000522200</span><br><span class="line">[   37.407227] 3f80: 00000000004d5000 0000000000000000 0000000000000000 0000000000000000</span><br><span class="line">[   37.415063] 3fa0: 0000000000000000 0000fffff4b35680 0000000000468a78 0000fffff4b35680</span><br><span class="line">[   37.422899] 3fc0: 0000000000490e14 0000000060000000 0000000000000001 000000000000005e</span><br><span class="line">[   37.430735] 3fe0: 0000000000000000 0000000000000000 0000000000000000 0000000000000000</span><br><span class="line">[   37.438572] [&lt;ffff000008083ac0&gt;] el0_svc_naked+0x34/0x38</span><br><span class="line">[   37.443890] SMP: stopping secondary CPUs</span><br><span class="line">[   37.447815] Kernel Offset: disabled</span><br><span class="line">[   37.451304] CPU features: 0x0802008</span><br><span class="line">[   37.454787] Memory Limit: none</span><br><span class="line">[   37.457841] Rebooting in 1 seconds..</span><br></pre></td></tr></table></figure></p>
+<p>受到<a href="http://gityuan.com/2016/02/05/android-init/" target="_blank" rel="noopener">Android系统启动-Init篇</a>的启发，在启动<code>init</code>进程的时候会进行socket通信。而socket通信又是基于网络的功能。所以，我们将<code>CONFIG_NET</code>整个网络功能关掉了，肯定要出问题的。<br><code>net/socket.c</code>是<code>effectively the top level interface to the BSD socket paradigm</code>，因此，需要将<code>CONFIG_NET</code>打开。</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/33ec4d70/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic.superbed.cn/item/5c84e39e3a213b04179c44fd">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wowothink">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/33ec4d70/" itemprop="url">insmod版本不匹配问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+		    
+			
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-07T14:04:28+08:00">
+                2019-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
+                    <span itemprop="name">碰到的问题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  231
                 </span>
               
 
@@ -379,30 +740,13 @@
       
         
           
-            <p>本文持续收录开发过程中有意思、有意义的网站链接：</p>
-<h1 id="Hexo博客相关"><a href="#Hexo博客相关" class="headerlink" title="Hexo博客相关"></a>Hexo博客相关</h1><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next/" target="_blank" rel="noopener">hexo-next github官网</a></li>
-<li><a href="https://yfzhou.coding.me/categories/Hexo/" target="_blank" rel="noopener">hexo-next优化</a></li>
-<li><a href="https://yfzhou.coding.me/2018/08/27/Hexo-Next%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BB%A3%E7%A0%81%E5%9D%97%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD%EF%BC%89/" target="_blank" rel="noopener">Hexo-Next搭建个人博客（代码块复制功能）</a></li>
-<li><a href="https://github.com/iissnan/hexo-theme-next/issues/119" target="_blank" rel="noopener">使用hexo-next的有意思的博客记录</a></li>
-<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">theme-next官网</a></li>
-<li><a href="http://theme-next.iissnan.com/tag-plugins.html" target="_blank" rel="noopener">内置标签使用</a></li>
-<li><a href="https://asdfv1929.github.io/categories/GitBlog/" target="_blank" rel="noopener">hexo-next优化</a></li>
-<li><a href="http://www.aline2013.com/article/blog-inhance_deep.html" target="_blank" rel="noopener">博客深度改造之踩坑记</a> ：该博客中的颜色搭配比较清新</li>
-<li><a href="https://neveryu.github.io/tags/Hexo/" target="_blank" rel="noopener">Hexo-NexT搭建个人博客</a> ：包含基础的博客搭建内容</li>
-<li><a href="https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html#fn:2" target="_blank" rel="noopener">打造个性超赞博客Hexo+NexT+GitHubPages的超深度优化</a> ：有意思的博客，包括SEO优化</li>
-<li><a href="https://reuixiy.github.io/" target="_blank" rel="noopener">https://reuixiy.github.io/</a> ：这人的博客非常美观，内容也很有意思</li>
-</ul>
-<hr>
-<h1 id="Linux-Kernel"><a href="#Linux-Kernel" class="headerlink" title="Linux Kernel"></a>Linux Kernel</h1><ul>
-<li><a href="http://linuxperf.com/" target="_blank" rel="noopener">Linux Performance 性能优化</a></li>
-</ul>
-<hr>
-<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><ul>
-<li><a href="http://www.lining0806.com/homepage/" target="_blank" rel="noopener">Python数据挖掘方向</a></li>
-<li><a href="https://ask.julyedu.com/article/323" target="_blank" rel="noopener">Python爬虫开源项目</a></li>
-<li><a href="https://gitbook.cn/books/59b541bb3d49c37f032b67f1/index.html" target="_blank" rel="noopener">网络爬虫</a></li>
-<li><a href="http://cuijiahua.com/collections.html" target="_blank" rel="noopener">神经网络很牛逼的博客</a></li>
+            <p><code>insmod xxxdrv.ko</code>时候出现如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[   55.775651] xxxdrv: version magic &apos;3.14.19+ SMP mod_unload ARMv7 p2v8 &apos; should be &apos;3.14.19 SMP mod_unload ARMv7 p2v8 &apos;</span><br><span class="line">insmod: init_module &apos;/system/lib/modules/xxxdrv.ko&apos; failed (Exec format error)</span><br></pre></td></tr></table></figure></p>
+<p>很明显，版本号<code>3.14.19+</code>后面多了个<code>+</code>号，<code>+</code>是为了标记说这个kernel是不干净的。这个<code>+</code>号是<code>scripts/setlocalversion</code>文件中调用<code>scm_version()</code>函数检查<code>Kernel_SrcDir/</code>目录下的<code>.scmversion</code>文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># CONFIG_LOCALVERSION and LOCALVERSION (if set)</span><br><span class="line">res=&quot;$&#123;res&#125;$&#123;CONFIG_LOCALVERSION&#125;$&#123;LOCALVERSION&#125;&quot;</span><br><span class="line"></span><br><span class="line"># scm version string if not at a tagged commit</span><br><span class="line">if test &quot;$CONFIG_LOCALVERSION_AUTO&quot; = &quot;y&quot;; then</span><br><span class="line">    # full scm version string</span><br><span class="line">    res=&quot;$res$(scm_version)&quot;</span><br><span class="line">else</span><br><span class="line">    # append a plus sign if the repository is not in a clean</span><br><span class="line">    # annotated or signed tagged state (as git describe only</span><br><span class="line">    # looks at signed or annotated tags - git tag -a/-s) and</span><br><span class="line">    # LOCALVERSION= is not specified</span><br><span class="line">    if test &quot;$&#123;LOCALVERSION+set&#125;&quot; != &quot;set&quot;; then</span><br><span class="line">        scm=$(scm_version --short)</span><br><span class="line">        #res=&quot;$res$&#123;scm:++&#125;&quot;</span><br><span class="line">    fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>如果要去除掉<code>+</code>号，需要设置</p>
+<ul>
+<li><code>LOCALVERSION</code>设为为空；</li>
+<li>在<code>defconfig</code>中设置<code>CONFIG_LOCALVERSION_AUTO is not set</code>；</li>
+<li>在<code>Kernel_SrcDir/</code>目录下创建空的<code>.scmversion</code>文件。</li>
 </ul>
 
           
@@ -1745,380 +2089,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/7ffb6593/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Victor Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://pic.superbed.cn/item/5c84e39e3a213b04179c44fd">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wowothink">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/7ffb6593/" itemprop="url">eMMC读写性能和稳定性验证</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-		    
-			
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T22:15:55+08:00">
-                2018-10-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-性能测试/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux 性能测试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,053
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  11
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文主要讲述使用<code>iozone</code>、<code>dd/cp/rm</code>命令、<code>fio</code>、<code>flashbench</code>进行eMMC读写性能和稳定性测试。读写性能主要是通过<code>iozone</code>测试，稳定性主要是通过长时间随机读写进行测试。
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/7ffb6593/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    <div>
-      
-    </div>
-    
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/423abe9e/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Victor Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://pic.superbed.cn/item/5c84e39e3a213b04179c44fd">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wowothink">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/423abe9e/" itemprop="url">git常用命令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-		    
-			
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T21:52:34+08:00">
-                2018-10-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/ubuntu工具/" itemprop="url" rel="index">
-                    <span itemprop="name">ubuntu工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,121
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="clone某个ip地址的git仓库"><a href="#clone某个ip地址的git仓库" class="headerlink" title="clone某个ip地址的git仓库"></a>clone某个ip地址的git仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>git clone git@192.168.1.3:knl/kernel-imx6.git</span><br></pre></td></tr></table></figure>
-<h3 id="git删除未跟踪的文件"><a href="#git删除未跟踪的文件" class="headerlink" title="git删除未跟踪的文件"></a>git删除未跟踪的文件</h3><ul>
-<li><code>git clean -f</code>: 删除 untracked files；</li>
-<li><code>git clean -fd</code>: 连untracked的目录也一起删掉；</li>
-<li><code>git clean -dxf</code>: 连gitignore的untrack文件和目录也一起删掉 （慎用，一般这个是用来删掉编译出来的 .o之类的文件用的）。</li>
-</ul>
-<h3 id="代码提交并加上commit-id"><a href="#代码提交并加上commit-id" class="headerlink" title="代码提交并加上commit id"></a>代码提交并加上commit id</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>gitdir=$(git rev-parse --git-dir); scp -p -P 29418 user-name@192.168.1.74:hooks/commit-msg $&#123;gitdir&#125;/hooks/</span><br><span class="line"><span class="meta">#</span>git commit --amend</span><br><span class="line"><span class="meta">#</span>git push branch-name HEAD:refs/for/master</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/423abe9e/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-    
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2171,7 +2141,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2267,7 +2237,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">63.3k</span>
+    <span title="Site words total count">65.5k</span>
   
 </div>
 

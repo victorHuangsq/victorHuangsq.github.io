@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="在vi编辑器中使用sudo命令:w !sudo tee %命令:w !{cmd}，让vim执行一个外部命令{cmd}，然后把当前缓冲区的内容从stdin传入。tee是一个把stdin保存到文件的小工具。 而%，是vim当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。 返回上次的位置ctrl + o: 返回上次光标位置；ctrl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T08:23:55.053Z">
+<meta property="og:updated_time" content="2019-04-07T06:41:33.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vi常用命令">
 <meta name="twitter:description" content="在vi编辑器中使用sudo命令:w !sudo tee %命令:w !{cmd}，让vim执行一个外部命令{cmd}，然后把当前缓冲区的内容从stdin传入。tee是一个把stdin保存到文件的小工具。 而%，是vim当中一个只读寄存器的名字，总保存着当前编辑文件的文件路径。 所以执行这个命令，就相当于从vim外部修改了当前编辑的文件。 返回上次的位置ctrl + o: 返回上次光标位置；ctrl">
@@ -338,7 +338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  725
+                  1,064
                 </span>
               
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -397,6 +397,18 @@
 <h3 id="列替换多个字符"><a href="#列替换多个字符" class="headerlink" title="列替换多个字符"></a>列替换多个字符</h3><p><code>ctrl + v</code>: 选中需要替换的列，按大写<code>I</code>，插入你想要的多个字符，按<code>q</code>回到正常模式，按回车即可。</p>
 <h3 id="删除包含特定字符的行"><a href="#删除包含特定字符的行" class="headerlink" title="删除包含特定字符的行"></a>删除包含特定字符的行</h3><p><code>:g/pattern/d</code></p>
 <h3 id="删除不包含指定字符的行"><a href="#删除不包含指定字符的行" class="headerlink" title="删除不包含指定字符的行"></a>删除不包含指定字符的行</h3><p><code>:v/pattern/d</code>或<code>:g!/pattern/d</code></p>
+<h3 id="定义跳转"><a href="#定义跳转" class="headerlink" title="定义跳转"></a>定义跳转</h3><p><code>ctrl + ]</code>来跳转到变量或者函数定义的地方。<code>ctrl + t</code>返回到跳转前的位置;</p>
+<h3 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h3><p>在vim的insert模式下，可以使用<code>ctrl + n</code>来实现自动补全，使用上下键进行切换;</p>
+<h3 id="设置高亮"><a href="#设置高亮" class="headerlink" title="设置高亮"></a>设置高亮</h3><p>vi配置<code>:set hlsearch</code>高亮所有匹配的字符串;</p>
+<h3 id="立即生效"><a href="#立即生效" class="headerlink" title="立即生效"></a>立即生效</h3><p>修改了配置文件<code>.vimrc</code>并保存后，如果希望不重启vim而让配置立即生效，可以在打开的vim中执行<code>:source ~HOME/.vimrc</code>;</p>
+<h3 id="切换窗口"><a href="#切换窗口" class="headerlink" title="切换窗口"></a>切换窗口</h3><p>在<code>taglist</code>中，按<code>ctrl + ww</code>（2次w），可以切换到函数列表区，移动到函数名称行后按ENTER即可查看函数代码。再次按<code>ctrl + ww</code>可回到编辑区；</p>
+<h3 id="选择单词"><a href="#选择单词" class="headerlink" title="选择单词"></a>选择单词</h3><p>vi选中单词并查找：<code>g + d</code>高亮显示光标所属单词，<code>n</code>查找;</p>
+<h3 id="删除单词"><a href="#删除单词" class="headerlink" title="删除单词"></a>删除单词</h3><p>vi 快速删除当前光标所在的单词：<code>c + w</code>;</p>
+<h3 id="复制单词"><a href="#复制单词" class="headerlink" title="复制单词"></a>复制单词</h3><p><code>yaw</code>可以快速复制当前的单词；</p>
+<h3 id="快速跳转下一个单词"><a href="#快速跳转下一个单词" class="headerlink" title="快速跳转下一个单词"></a>快速跳转下一个单词</h3><p>vi 快速跳转到下个单词<code>w</code>;</p>
+<h3 id="重新加载原文件"><a href="#重新加载原文件" class="headerlink" title="重新加载原文件"></a>重新加载原文件</h3><p><code>:e!</code>命令可以重新装载原来的文件；</p>
+<h3 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h3><p><code>:help {主题}</code>命令可以获得特定主题的帮助；</p>
+<h3 id="代码块匹配"><a href="#代码块匹配" class="headerlink" title="代码块匹配"></a>代码块匹配</h3><p>命令行模式下：<code>%</code>命令的作用是跳到匹配处，比如括号之间，C的宏指令#if #else #endif之间；</p>
 
       
     </div>
@@ -412,7 +424,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>Title:</span><a href="/5e60c079/">vi常用命令</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2019-03-17 / 16:03</p>
+  <p><span>Time:</span>2019-04-07 / 14:04</p>
   <p><span>Link:</span><a href="/5e60c079/" title="vi常用命令">http://wowothink.com/5e60c079/</a>
     <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/5e60c079/" aria-label="copy link success"></i></span>
   </p>
@@ -554,7 +566,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -625,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在vi编辑器中使用sudo命令"><span class="nav-number">1.</span> <span class="nav-text">在vi编辑器中使用sudo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回上次的位置"><span class="nav-number">2.</span> <span class="nav-text">返回上次的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排版对齐"><span class="nav-number">3.</span> <span class="nav-text">排版对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串替换"><span class="nav-number">4.</span> <span class="nav-text">字符串替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速选中单词"><span class="nav-number">5.</span> <span class="nav-text">快速选中单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">6.</span> <span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制显示"><span class="nav-number">7.</span> <span class="nav-text">16进制显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制修改"><span class="nav-number">8.</span> <span class="nav-text">16进制修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮所匹配的单词"><span class="nav-number">9.</span> <span class="nav-text">高亮所匹配的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标所处单词查找"><span class="nav-number">10.</span> <span class="nav-text">光标所处单词查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳到下个单词"><span class="nav-number">11.</span> <span class="nav-text">快速跳到下个单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除光标所在单词"><span class="nav-number">12.</span> <span class="nav-text">删除光标所在单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳转到文件尾"><span class="nav-number">13.</span> <span class="nav-text">快速跳转到文件尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配括号"><span class="nav-number">14.</span> <span class="nav-text">匹配括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换一个字符"><span class="nav-number">15.</span> <span class="nav-text">列替换一个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换多个字符"><span class="nav-number">16.</span> <span class="nav-text">列替换多个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除包含特定字符的行"><span class="nav-number">17.</span> <span class="nav-text">删除包含特定字符的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不包含指定字符的行"><span class="nav-number">18.</span> <span class="nav-text">删除不包含指定字符的行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在vi编辑器中使用sudo命令"><span class="nav-number">1.</span> <span class="nav-text">在vi编辑器中使用sudo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回上次的位置"><span class="nav-number">2.</span> <span class="nav-text">返回上次的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排版对齐"><span class="nav-number">3.</span> <span class="nav-text">排版对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串替换"><span class="nav-number">4.</span> <span class="nav-text">字符串替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速选中单词"><span class="nav-number">5.</span> <span class="nav-text">快速选中单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">6.</span> <span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制显示"><span class="nav-number">7.</span> <span class="nav-text">16进制显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16进制修改"><span class="nav-number">8.</span> <span class="nav-text">16进制修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮所匹配的单词"><span class="nav-number">9.</span> <span class="nav-text">高亮所匹配的单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标所处单词查找"><span class="nav-number">10.</span> <span class="nav-text">光标所处单词查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳到下个单词"><span class="nav-number">11.</span> <span class="nav-text">快速跳到下个单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除光标所在单词"><span class="nav-number">12.</span> <span class="nav-text">删除光标所在单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳转到文件尾"><span class="nav-number">13.</span> <span class="nav-text">快速跳转到文件尾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配括号"><span class="nav-number">14.</span> <span class="nav-text">匹配括号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换一个字符"><span class="nav-number">15.</span> <span class="nav-text">列替换一个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列替换多个字符"><span class="nav-number">16.</span> <span class="nav-text">列替换多个字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除包含特定字符的行"><span class="nav-number">17.</span> <span class="nav-text">删除包含特定字符的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不包含指定字符的行"><span class="nav-number">18.</span> <span class="nav-text">删除不包含指定字符的行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义跳转"><span class="nav-number">19.</span> <span class="nav-text">定义跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动补全"><span class="nav-number">20.</span> <span class="nav-text">自动补全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置高亮"><span class="nav-number">21.</span> <span class="nav-text">设置高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立即生效"><span class="nav-number">22.</span> <span class="nav-text">立即生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换窗口"><span class="nav-number">23.</span> <span class="nav-text">切换窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择单词"><span class="nav-number">24.</span> <span class="nav-text">选择单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除单词"><span class="nav-number">25.</span> <span class="nav-text">删除单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制单词"><span class="nav-number">26.</span> <span class="nav-text">复制单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速跳转下一个单词"><span class="nav-number">27.</span> <span class="nav-text">快速跳转下一个单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新加载原文件"><span class="nav-number">28.</span> <span class="nav-text">重新加载原文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帮助"><span class="nav-number">29.</span> <span class="nav-text">帮助</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块匹配"><span class="nav-number">30.</span> <span class="nav-text">代码块匹配</span></a></li></ol></div>
             
 
           </div>
@@ -666,7 +678,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">63.3k</span>
+    <span title="Site words total count">65.5k</span>
   
 </div>
 
