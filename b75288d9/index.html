@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="wowothink">
 <meta property="og:description" content="以下方法虽说是修复硬盘分区，但是操作过程中有可能导致数据丢失，请先做好备份，任何后果自己负责。 现象之前在/etc/fstab中新增如下命令开机自动挂载/dev/sdb1：1/dev/sdb1 /home/victor/disk2 ext4 defaults 0 2 某个时候，启动ubuntu，发现启动不了，只能进入recovery模式。然后看了下启动log，提示挂载/dev/sdb1分区失败。自">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-14T08:47:20.245Z">
+<meta property="og:updated_time" content="2019-04-14T09:06:14.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu硬盘分区修复">
 <meta name="twitter:description" content="以下方法虽说是修复硬盘分区，但是操作过程中有可能导致数据丢失，请先做好备份，任何后果自己负责。 现象之前在/etc/fstab中新增如下命令开机自动挂载/dev/sdb1：1/dev/sdb1 /home/victor/disk2 ext4 defaults 0 2 某个时候，启动ubuntu，发现启动不了，只能进入recovery模式。然后看了下启动log，提示挂载/dev/sdb1分区失败。自">
@@ -375,7 +375,7 @@
       
 
       
-        <p><font color="red" size="5">以下方法虽说是修复硬盘分区，但是操作过程中有可能导致数据丢失，请先做好备份，任何后果自己负责。</font></p>
+        <p><font color="red">以下方法虽说是修复硬盘分区，但是操作过程中有可能导致数据丢失，请先做好备份，任何后果自己负责。</font></p>
 <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>之前在<code>/etc/fstab</code>中新增如下命令开机自动挂载<code>/dev/sdb1</code>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/sdb1 /home/victor/disk2 ext4 defaults 0 2</span><br></pre></td></tr></table></figure></p>
 <p>某个时候，启动ubuntu，发现启动不了，只能进入recovery模式。然后看了下启动log，提示挂载<code>/dev/sdb1</code>分区失败。<br>自己手动去挂载，提示如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">victor@victor-HP:~$ mount -t ext4 /dev/sdb1 /home/victor/disk2/</span><br><span class="line">mount: only root can use &quot;--types&quot; option</span><br><span class="line">victor@victor-HP:~$ sudo mount -t ext4 /dev/sdb1 /home/victor/disk2/</span><br><span class="line">mount: wrong fs type, bad option, bad superblock on /dev/sdb1,</span><br><span class="line">missing codepage or helper program, or other error</span><br><span class="line"></span><br><span class="line">In some cases useful info is found in syslog - try</span><br><span class="line">dmesg | tail or so.</span><br></pre></td></tr></table></figure></p>
 <hr>
