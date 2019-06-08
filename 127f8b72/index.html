@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="碰到的问题,">
+  <meta name="keywords" content="Linux Kernel优化,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
-<meta name="keywords" content="碰到的问题">
+<meta name="description" content="在 https://elinux.org/Main_Page 的文章中，提供了嵌入式linux的相关wiki。其中有专门一个章节用来讲启动时间并提供了几种优化方式：https://elinux.org/Boot_Time本文主要使用initcall debug来定位哪个模块加载时间过长。">
+<meta name="keywords" content="Linux Kernel优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta property="og:url" content="http://wowothink.com/abc20ccf/index.html">
+<meta property="og:title" content="Linux Kernel优化--initcall_debug">
+<meta property="og:url" content="http://wowothink.com/127f8b72/index.html">
 <meta property="og:site_name" content="wowothink">
-<meta property="og:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta property="og:description" content="在 https://elinux.org/Main_Page 的文章中，提供了嵌入式linux的相关wiki。其中有专门一个章节用来讲启动时间并提供了几种优化方式：https://elinux.org/Boot_Time本文主要使用initcall debug来定位哪个模块加载时间过长。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T08:23:55.058Z">
+<meta property="og:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E4%BC%98%E5%8C%96--initcall_debug-1.jpg">
+<meta property="og:updated_time" content="2019-06-08T05:53:43.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta name="twitter:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta name="twitter:title" content="Linux Kernel优化--initcall_debug">
+<meta name="twitter:description" content="在 https://elinux.org/Main_Page 的文章中，提供了嵌入式linux的相关wiki。其中有专门一个章节用来讲启动时间并提供了几种优化方式：https://elinux.org/Boot_Time本文主要使用initcall debug来定位哪个模块加载时间过长。">
+<meta name="twitter:image" content="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E4%BC%98%E5%8C%96--initcall_debug-1.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://wowothink.com/abc20ccf/">
+  <link rel="canonical" href="http://wowothink.com/127f8b72/">
 
 
 
 
 
-  <title>修改xxx_defconfig没有起效果原因分析 | wowothink</title>
+  <title>Linux Kernel优化--initcall_debug | wowothink</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/abc20ccf/">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/127f8b72/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Victor Huang">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">修改xxx_defconfig没有起效果原因分析</h1>
+          <h1 class="post-title" itemprop="name headline">Linux Kernel优化--initcall_debug</h1>
         
 
         <div class="post-meta">
@@ -284,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T21:35:00+08:00">
-                2018-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T22:05:08+08:00">
+                2018-05-02
               </time>
             
 
@@ -307,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
-                    <span itemprop="name">碰到的问题</span>
+                  <a href="/categories/Linux-Kernel优化/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux Kernel优化</span>
                   </a>
                 </span>
 
@@ -338,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  348
+                  735
                 </span>
               
 
@@ -354,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -375,12 +377,15 @@
       
 
       
-        <p>问题：正常情况下我们要在Kernel中配置某个功能，会去<code>Kernel_SrcDir/arch/arm/configs/xxx_defconfig</code>文件中修改某个<code>宏 =y</code>或者<code>is not set</code>。<br>但是有时候我们明明设置进去了，在<code>Kernel_SrcDir/.config</code>中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：<a id="more"></a></p>
+        <p>在 <a href="https://elinux.org/Main_Page" target="_blank" rel="noopener">https://elinux.org/Main_Page</a> 的文章中，提供了嵌入式linux的相关wiki。其中有专门一个章节用来讲启动时间并提供了几种优化方式：<a href="https://elinux.org/Boot_Time" target="_blank" rel="noopener">https://elinux.org/Boot_Time</a><br>本文主要使用initcall debug来定位哪个模块加载时间过长。<a id="more"></a></p>
 <hr>
-<p>1、编译之前没有事先删除<code>Kernel_SrcDir/.config</code>文件，如果<code>Kernel_SrcDir/.config</code>文件存在，是不会去更新<code>xxx_defconfig</code>的内容的；</p>
-<p>2、编写<code>xxx_defconfig</code>的格式不对，一定要严格按照以下格式：<font color="red">宏要顶格写，屏蔽宏的要使用<code>#</code>号。</font><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_XXX_LKCD=y</span><br><span class="line">#CONFIG_XXX_LKCD is <span class="keyword">not</span> <span class="built_in">set</span></span><br></pre></td></tr></table></figure></p>
-<p>3、比如说你已按照上述要求将<code>CONFIG_XXX_LKCD</code>配置为<code>is not set</code>，但在<code>.congig</code>中看到它还是为<code>CONFIG_XXX_LKCD=y</code>。<br>出现这种情况是由于在驱动位置中对应的<code>Kconfig</code>将其设置为<code>default y</code>，所以在<code>xxx_defconfig</code>怎么改这个宏都是打开的。<br>注意：<font color="red"><code>.config</code>是根据<code>xxx_defconfig</code>和代码路径下的<code>Kconfig</code>生成的。</font><br>我之前在<code>Kernel_SrcDir/drivers/xxx_lkcd/</code>新增一个驱动。肯定要在里面添加<code>Kconfig</code>，内容如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># <span class="function">ARM <span class="title">xxx_lkcd</span><span class="params">(xxx project linux kernel crash dump)</span> configuration</span></span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">menu <span class="string">"xxx linux kernel crash dump"</span></span><br><span class="line"></span><br><span class="line">config XXX_LKCD</span><br><span class="line">    <span class="keyword">bool</span> <span class="string">"Enable xxx linux kernel crash dump"</span></span><br><span class="line"><span class="keyword">default</span> n</span><br><span class="line">    depends on PROC_FS &amp;&amp; ARM</span><br><span class="line">    help</span><br><span class="line">        Enable xxx linux kernel crash dump</span><br><span class="line">endmenu</span><br></pre></td></tr></table></figure></p>
-<p>注意一定要设置<code>default n</code>，这样才能在<code>xxx_defconfig</code>自由的修改打开或者关闭。</p>
+<h1 id="initcall-debug"><a href="#initcall-debug" class="headerlink" title="initcall debug"></a>initcall debug</h1><p>这个功能可以用于计算每个模块调用initcall的时间，这样就可以知道哪个模块初始化的时间过长。<br>魅族内核组吴章金发起了“嵌入式 Linux 知识库 (elinux.org) 中文翻译计划”，其中boot time的链接为：<a href="https://github.com/tinyclub/elinux/blob/master/zh/dev_portals/Boot_Time/Boot_Time.md" target="_blank" rel="noopener">https://github.com/tinyclub/elinux/blob/master/zh/dev_portals/Boot_Time/Boot_Time.md</a></p>
+<hr>
+<h1 id="往cmdline传递参数"><a href="#往cmdline传递参数" class="headerlink" title="往cmdline传递参数"></a>往cmdline传递参数</h1><p>往cmdline传递以下两个参数<code>initcall_debug=1 ignore_loglevel=1</code>，在 <code>/proc/cmdline</code> 可以查看当前使用的cmdline情况。</p>
+<p>传递这两个参数可以打开<code>initcall_debug</code>功能，dmesg的输出变为下面的格式，我们可以通过这里面的内容来进行Kernel的优化。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[    <span class="number">6.302837</span>] initcall cdns3_driver_platform_register+<span class="number">0x0</span>/<span class="number">0x24</span> returned <span class="number">0</span> after <span class="number">73878</span> usecs</span><br><span class="line">[    <span class="number">6.311062</span>] calling  ehci_hcd_init+<span class="number">0x0</span>/<span class="number">0x70</span> @ <span class="number">1</span></span><br><span class="line">[    6.315596] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver</span><br><span class="line">[    <span class="number">6.322165</span>] initcall ehci_hcd_init+<span class="number">0x0</span>/<span class="number">0x70</span> returned <span class="number">0</span> after <span class="number">6411</span> usecs</span><br><span class="line">[    <span class="number">6.328790</span>] calling  ehci_platform_init+<span class="number">0x0</span>/<span class="number">0x60</span> @ <span class="number">1</span></span><br><span class="line">[    <span class="number">6.333762</span>] ehci-platform: EHCI generic platform driver</span><br><span class="line">[    <span class="number">6.339365</span>] initcall ehci_platform_init+<span class="number">0x0</span>/<span class="number">0x60</span> returned <span class="number">0</span> after <span class="number">5467</span> usecs</span><br><span class="line">[    <span class="number">6.346423</span>] calling  xhci_hcd_init+<span class="number">0x0</span>/<span class="number">0x20</span> @ <span class="number">1</span></span><br><span class="line">[    <span class="number">6.350971</span>] initcall xhci_hcd_init+<span class="number">0x0</span>/<span class="number">0x20</span> returned <span class="number">0</span> after <span class="number">0</span> usecs</span><br><span class="line">[    <span class="number">6.357353</span>] calling  xhci_plat_init+<span class="number">0x0</span>/<span class="number">0x34</span> @ <span class="number">1</span></span><br><span class="line">[    <span class="number">6.362425</span>] initcall xhci_plat_init+<span class="number">0x0</span>/<span class="number">0x34</span> returned <span class="number">0</span> after <span class="number">428</span> usecs</span><br><span class="line">[    <span class="number">6.369058</span>] calling  usb_storage_driver_init+<span class="number">0x0</span>/<span class="number">0x48</span> @ <span class="number">1</span></span><br><span class="line">[    <span class="number">6.374593</span>] usbcore: registered <span class="keyword">new</span> interface driver usb-storage</span><br><span class="line">[    <span class="number">6.380702</span>] initcall usb_storage_driver_init+<span class="number">0x0</span>/<span class="number">0x48</span> returned <span class="number">0</span> after <span class="number">6063</span> usecs</span><br><span class="line">[    <span class="number">6.388223</span>] calling  usb3503_init+<span class="number">0x0</span>/<span class="number">0x68</span> @ <span class="number">1</span></span><br><span class="line">[    <span class="number">6.392925</span>] initcall usb3503_init+<span class="number">0x0</span>/<span class="number">0x68</span> returned <span class="number">0</span> after <span class="number">239</span> usecs</span><br><span class="line">[    <span class="number">6.399384</span>] calling  ci_hdrc_platform_register+<span class="number">0x0</span>/<span class="number">0x24</span> @ <span class="number">1</span></span><br><span class="line">[    <span class="number">6.405166</span>] initcall ci_hdrc_platform_register+<span class="number">0x0</span>/<span class="number">0x24</span> returned <span class="number">0</span> after <span class="number">79</span> usecs</span><br><span class="line">[    <span class="number">6.412671</span>] calling  ci_hdrc_usb2_driver_init+<span class="number">0x0</span>/<span class="number">0x20</span> @ <span class="number">1</span></span><br><span class="line">[    <span class="number">6.418345</span>] initcall ci_hdrc_usb2_driver_init+<span class="number">0x0</span>/<span class="number">0x20</span> returned <span class="number">0</span> after <span class="number">171</span> usecs</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="倒叙排列输出时间"><a href="#倒叙排列输出时间" class="headerlink" title="倒叙排列输出时间"></a>倒叙排列输出时间</h1><p>有了上面串口的信息，我们可以通过将函数名和与之对应的时间提取出来，然后倒叙排列，输出到excel文件中，以直观的方式展示出来。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="keyword">import</span> xlwt</span><br><span class="line"></span><br><span class="line">file = open(<span class="string">"./cal_time/kernel-log.txt"</span>)</span><br><span class="line">line = <span class="number">0</span></span><br><span class="line">list = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    content = file.readline()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> content:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    line = line+<span class="number">1</span></span><br><span class="line">    content=content.strip(<span class="string">'\n'</span>)</span><br><span class="line">    usecs_part = content.endswith(<span class="string">"usecs"</span>)</span><br><span class="line">    <span class="keyword">if</span> usecs_part == <span class="number">1</span>:</span><br><span class="line">        <span class="comment"># 获取usecs参数</span></span><br><span class="line">        <span class="comment">#print("%d: %s\n" %(line,content))</span></span><br><span class="line">        sec_start_index = content.find(<span class="string">"after"</span>)+<span class="number">6</span></span><br><span class="line">        sec_end_index = content.find(<span class="string">"usecs"</span>)<span class="number">-1</span></span><br><span class="line">        useconds = content[sec_start_index:sec_end_index]</span><br><span class="line">        usec = int(useconds)</span><br><span class="line">        <span class="comment">#print("%d, %d, %d, %s\n" %(sec_start_index, sec_end_index, usec, useconds))</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取函数名</span></span><br><span class="line">        func_start_index = content.find(<span class="string">"initcall"</span>)+<span class="number">9</span></span><br><span class="line">        func_end_index = content.find(<span class="string">"+"</span>)</span><br><span class="line">        func_name = content[func_start_index:func_end_index]</span><br><span class="line">        <span class="comment">#print("%d, %d, %s\n" %(func_start_index, func_end_index, func_name))</span></span><br><span class="line">        list.append((usec, func_name))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 采用降序排序</span></span><br><span class="line">list.sort(reverse = <span class="keyword">True</span>)</span><br><span class="line"><span class="comment">#print(list)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入到excel表格中</span></span><br><span class="line">data=xlwt.Workbook()</span><br><span class="line">table=data.add_sheet(<span class="string">"函数耗时统计"</span>)</span><br><span class="line">table.write(<span class="number">0</span>, <span class="number">0</span>, <span class="string">u'函数名'</span>)</span><br><span class="line">table.write(<span class="number">0</span>, <span class="number">1</span>, <span class="string">u'耗时'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(list)):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">2</span>):</span><br><span class="line">        table.write(i+<span class="number">1</span>, <span class="number">1</span>-j, list[i][j])</span><br><span class="line">data.save(<span class="string">"output.xls"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>输出的结果如下：<br><img src="http://p6x2iir9l.bkt.clouddn.com/Linux%20Kernel%E4%BC%98%E5%8C%96--initcall_debug-1.jpg" alt="输出结果"></p>
 
       
     </div>
@@ -394,11 +399,11 @@
   <!-- JS�� sweetalert ���޸�·�� -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>Title:</span><a href="/abc20ccf/">修改xxx_defconfig没有起效果原因分析</a></p>
+  <p><span>Title:</span><a href="/127f8b72/">Linux Kernel优化--initcall_debug</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2019-03-17 / 16:03</p>
-  <p><span>Link:</span><a href="/abc20ccf/" title="修改xxx_defconfig没有起效果原因分析">http://wowothink.com/abc20ccf/</a>
-    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/abc20ccf/" aria-label="copy link success"></i></span>
+  <p><span>Time:</span>2019-06-08 / 13:06</p>
+  <p><span>Link:</span><a href="/127f8b72/" title="Linux Kernel优化--initcall_debug">http://wowothink.com/127f8b72/</a>
+    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/127f8b72/" aria-label="copy link success"></i></span>
   </p>
   <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>  
 </div>
@@ -434,7 +439,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/碰到的问题/" rel="tag"><i class="fa fa-tag"></i> 碰到的问题</a>
+            <a href="/tags/Linux-Kernel优化/" rel="tag"><i class="fa fa-tag"></i> Linux Kernel优化</a>
           
         </div>
       
@@ -447,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/e0007988/" rel="next" title="Linux测试U盘读写速度">
-                <i class="fa fa-chevron-left"></i> Linux测试U盘读写速度
+              <a href="/0e320fa6/" rel="next" title="Linux Kernel裁剪--menuconfig的使用">
+                <i class="fa fa-chevron-left"></i> Linux Kernel裁剪--menuconfig的使用
               </a>
             
           </div>
@@ -457,8 +462,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/90870e97/" rel="prev" title="Linux Kernel Crash Dump">
-                Linux Kernel Crash Dump <i class="fa fa-chevron-right"></i>
+              <a href="/21f93ebf/" rel="prev" title="Android编译流程">
+                Android编译流程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -511,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -590,6 +604,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#initcall-debug"><span class="nav-number">1.</span> <span class="nav-text">initcall debug</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#往cmdline传递参数"><span class="nav-number">2.</span> <span class="nav-text">往cmdline传递参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#倒叙排列输出时间"><span class="nav-number">3.</span> <span class="nav-text">倒叙排列输出时间</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

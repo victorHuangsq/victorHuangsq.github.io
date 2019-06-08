@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="碰到的问题,">
+  <meta name="keywords" content="Linux USB,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
-<meta name="keywords" content="碰到的问题">
+<meta name="description" content="本文主要讲述测试U盘的读写速度。">
+<meta name="keywords" content="Linux USB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta property="og:url" content="http://wowothink.com/abc20ccf/index.html">
+<meta property="og:title" content="Linux测试U盘读写速度">
+<meta property="og:url" content="http://wowothink.com/e0007988/index.html">
 <meta property="og:site_name" content="wowothink">
-<meta property="og:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta property="og:description" content="本文主要讲述测试U盘的读写速度。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T08:23:55.058Z">
+<meta property="og:updated_time" content="2019-06-08T05:56:00.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta name="twitter:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta name="twitter:title" content="Linux测试U盘读写速度">
+<meta name="twitter:description" content="本文主要讲述测试U盘的读写速度。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wowothink.com/abc20ccf/">
+  <link rel="canonical" href="http://wowothink.com/e0007988/">
 
 
 
 
 
-  <title>修改xxx_defconfig没有起效果原因分析 | wowothink</title>
+  <title>Linux测试U盘读写速度 | wowothink</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/abc20ccf/">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/e0007988/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Victor Huang">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">修改xxx_defconfig没有起效果原因分析</h1>
+          <h1 class="post-title" itemprop="name headline">Linux测试U盘读写速度</h1>
         
 
         <div class="post-meta">
@@ -284,7 +284,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T21:35:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T20:26:00+08:00">
                 2018-05-17
               </time>
             
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
-                    <span itemprop="name">碰到的问题</span>
+                  <a href="/categories/Linux-USB/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux USB</span>
                   </a>
                 </span>
 
@@ -338,7 +338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  348
+                  509
                 </span>
               
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -375,12 +375,34 @@
       
 
       
-        <p>问题：正常情况下我们要在Kernel中配置某个功能，会去<code>Kernel_SrcDir/arch/arm/configs/xxx_defconfig</code>文件中修改某个<code>宏 =y</code>或者<code>is not set</code>。<br>但是有时候我们明明设置进去了，在<code>Kernel_SrcDir/.config</code>中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：<a id="more"></a></p>
+        <p>本文主要讲述测试U盘的读写速度。<a id="more"></a></p>
+<h1 id="dd命令参数简介"><a href="#dd命令参数简介" class="headerlink" title="dd命令参数简介"></a>dd命令参数简介</h1><ul>
+<li>if=输入文件；</li>
+<li>of=输出文件；</li>
+<li>ibs=一次读取字节数；</li>
+<li>obs=一次写入字节数；</li>
+<li>bs=设置一次读取写入的字节数；</li>
+<li>skip=跳过的bs数；</li>
+<li>count=拷贝的块数；</li>
+</ul>
 <hr>
-<p>1、编译之前没有事先删除<code>Kernel_SrcDir/.config</code>文件，如果<code>Kernel_SrcDir/.config</code>文件存在，是不会去更新<code>xxx_defconfig</code>的内容的；</p>
-<p>2、编写<code>xxx_defconfig</code>的格式不对，一定要严格按照以下格式：<font color="red">宏要顶格写，屏蔽宏的要使用<code>#</code>号。</font><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_XXX_LKCD=y</span><br><span class="line">#CONFIG_XXX_LKCD is <span class="keyword">not</span> <span class="built_in">set</span></span><br></pre></td></tr></table></figure></p>
-<p>3、比如说你已按照上述要求将<code>CONFIG_XXX_LKCD</code>配置为<code>is not set</code>，但在<code>.congig</code>中看到它还是为<code>CONFIG_XXX_LKCD=y</code>。<br>出现这种情况是由于在驱动位置中对应的<code>Kconfig</code>将其设置为<code>default y</code>，所以在<code>xxx_defconfig</code>怎么改这个宏都是打开的。<br>注意：<font color="red"><code>.config</code>是根据<code>xxx_defconfig</code>和代码路径下的<code>Kconfig</code>生成的。</font><br>我之前在<code>Kernel_SrcDir/drivers/xxx_lkcd/</code>新增一个驱动。肯定要在里面添加<code>Kconfig</code>，内容如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># <span class="function">ARM <span class="title">xxx_lkcd</span><span class="params">(xxx project linux kernel crash dump)</span> configuration</span></span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">menu <span class="string">"xxx linux kernel crash dump"</span></span><br><span class="line"></span><br><span class="line">config XXX_LKCD</span><br><span class="line">    <span class="keyword">bool</span> <span class="string">"Enable xxx linux kernel crash dump"</span></span><br><span class="line"><span class="keyword">default</span> n</span><br><span class="line">    depends on PROC_FS &amp;&amp; ARM</span><br><span class="line">    help</span><br><span class="line">        Enable xxx linux kernel crash dump</span><br><span class="line">endmenu</span><br></pre></td></tr></table></figure></p>
-<p>注意一定要设置<code>default n</code>，这样才能在<code>xxx_defconfig</code>自由的修改打开或者关闭。</p>
+<h1 id="黑洞文件-最大空白文件"><a href="#黑洞文件-最大空白文件" class="headerlink" title="黑洞文件/最大空白文件"></a>黑洞文件/最大空白文件</h1><ul>
+<li><code>null文件</code>是一个黑洞文件，把它理解为垃圾桶就行，什么废旧不需要的文件只需往里扔，进入它的内容都会永远丢失；</li>
+<li><code>zero文件</code>当你读它的时候，它会提供无限的空字符(NULL, ASCII NUL, 0x00)，最长用的做法就是想你这样生产一个特定大小的空白文件。</li>
+</ul>
+<hr>
+<h1 id="测试写入速度"><a href="#测试写入速度" class="headerlink" title="测试写入速度"></a>测试写入速度</h1><p><code>dd if=/dev/zero of=/mnt/udisk/a.txt bs=512 count=100</code><br>如果提示<code>/mnt/udisk/a.txt: cannot open for write: Read-only file system</code>表示U盘这是个只读的分区，<br>需要重新<code>mount</code>，如下命令：<br><code>mount -o remount,rw /mnt/udisk</code></p>
+<p>执行上述写入之后，会得到如下结果：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100</span>+<span class="number">0</span> records in</span><br><span class="line"><span class="number">100</span>+<span class="number">0</span> records out</span><br><span class="line"><span class="number">51200</span> bytes transferred in <span class="number">0.002</span> secs (<span class="number">25600000</span> bytes/sec)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="测试读取速度"><a href="#测试读取速度" class="headerlink" title="测试读取速度"></a>测试读取速度</h1><p><code>#dd if=/mnt/udisk/a.txt of=/dev/null bs=512 count=100</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100</span>+<span class="number">0</span> records in</span><br><span class="line"><span class="number">100</span>+<span class="number">0</span> records out</span><br><span class="line"><span class="number">51200</span> bytes transferred in <span class="number">0.001</span> secs (<span class="number">51200000</span> bytes/sec)</span><br></pre></td></tr></table></figure></p>
+<p>一般做上述的测试，最好是要使用大文件来进行测试，得出的数据比较有说服力。</p>
+<hr>
+<h1 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h1><p>我测试写入U盘10G大写的内容，发现后面报错了：<br><code>dd if=/dev/zero of=/mnt/udisk/a.txt bs=512 count=20000000</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/mnt/udisk/a.txt: write error: File too large</span><br><span class="line"><span class="number">8388608</span>+<span class="number">0</span> records in</span><br><span class="line"><span class="number">8388607</span>+<span class="number">1</span> records out</span><br><span class="line"><span class="number">4294967295</span> bytes transferred in <span class="number">306.996</span> secs (<span class="number">13990303</span> bytes/sec)</span><br></pre></td></tr></table></figure>
+<p>4294967295自己约等于4G，也就是说U盘不支持单个文件超过4G的大小。</p>
+<p>查看U盘的mount情况，发现使用的是vfat，vfat是FAT32衍生出来的，单个文件大小不能超过4G。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/block/vold/<span class="number">8</span>:<span class="number">0</span> /mnt/udisk vfat rw,dirsync,relatime,uid=<span class="number">1000</span>,gid=<span class="number">1023</span>,fmask=<span class="number">0702</span>,dmask=<span class="number">0702</span>,allow_utime=<span class="number">0020</span>,codepage=<span class="number">437</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p><a href="http://blog.csdn.net/janexjx/article/details/50683816" target="_blank" rel="noopener">http://blog.csdn.net/janexjx/article/details/50683816</a></p>
 
       
     </div>
@@ -394,11 +416,11 @@
   <!-- JS�� sweetalert ���޸�·�� -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>Title:</span><a href="/abc20ccf/">修改xxx_defconfig没有起效果原因分析</a></p>
+  <p><span>Title:</span><a href="/e0007988/">Linux测试U盘读写速度</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2019-03-17 / 16:03</p>
-  <p><span>Link:</span><a href="/abc20ccf/" title="修改xxx_defconfig没有起效果原因分析">http://wowothink.com/abc20ccf/</a>
-    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/abc20ccf/" aria-label="copy link success"></i></span>
+  <p><span>Time:</span>2019-06-08 / 13:06</p>
+  <p><span>Link:</span><a href="/e0007988/" title="Linux测试U盘读写速度">http://wowothink.com/e0007988/</a>
+    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/e0007988/" aria-label="copy link success"></i></span>
   </p>
   <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>  
 </div>
@@ -434,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/碰到的问题/" rel="tag"><i class="fa fa-tag"></i> 碰到的问题</a>
+            <a href="/tags/Linux-USB/" rel="tag"><i class="fa fa-tag"></i> Linux USB</a>
           
         </div>
       
@@ -447,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/e0007988/" rel="next" title="Linux测试U盘读写速度">
-                <i class="fa fa-chevron-left"></i> Linux测试U盘读写速度
+              <a href="/084705fd/" rel="next" title="i.MX6 Mfgtool中ucl文件解析">
+                <i class="fa fa-chevron-left"></i> i.MX6 Mfgtool中ucl文件解析
               </a>
             
           </div>
@@ -457,8 +479,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/90870e97/" rel="prev" title="Linux Kernel Crash Dump">
-                Linux Kernel Crash Dump <i class="fa fa-chevron-right"></i>
+              <a href="/abc20ccf/" rel="prev" title="修改xxx_defconfig没有起效果原因分析">
+                修改xxx_defconfig没有起效果原因分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -511,8 +533,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -590,6 +621,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dd命令参数简介"><span class="nav-number">1.</span> <span class="nav-text">dd命令参数简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#黑洞文件-最大空白文件"><span class="nav-number">2.</span> <span class="nav-text">黑洞文件/最大空白文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试写入速度"><span class="nav-number">3.</span> <span class="nav-text">测试写入速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试读取速度"><span class="nav-number">4.</span> <span class="nav-text">测试读取速度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出现的问题"><span class="nav-number">5.</span> <span class="nav-text">出现的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文档"><span class="nav-number">6.</span> <span class="nav-text">参考文档</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

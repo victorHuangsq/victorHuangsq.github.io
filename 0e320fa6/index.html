@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Linux Kernel优化,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="wowothink">
-<meta property="og:url" content="http://wowothink.com/categories/Android编译相关/index.html">
+<meta name="description" content="在项目初期，NXP提供了i.MX7ul的BSP包，里面包含了大量第三方平台的配置以及本项目未使用的功能。因此，需要在此基础上进行kernel的裁剪。本文主要讲在不影响主要功能的前提下进行Linux Kernel裁剪的步骤。">
+<meta name="keywords" content="Linux Kernel优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Kernel裁剪--menuconfig的使用">
+<meta property="og:url" content="http://wowothink.com/0e320fa6/index.html">
 <meta property="og:site_name" content="wowothink">
+<meta property="og:description" content="在项目初期，NXP提供了i.MX7ul的BSP包，里面包含了大量第三方平台的配置以及本项目未使用的功能。因此，需要在此基础上进行kernel的裁剪。本文主要讲在不影响主要功能的前提下进行Linux Kernel裁剪的步骤。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-08T06:04:17.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wowothink">
+<meta name="twitter:title" content="Linux Kernel裁剪--menuconfig的使用">
+<meta name="twitter:description" content="在项目初期，NXP提供了i.MX7ul的BSP包，里面包含了大量第三方平台的配置以及本项目未使用的功能。因此，需要在此基础上进行kernel的裁剪。本文主要讲在不影响主要功能的前提下进行Linux Kernel裁剪的步骤。">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wowothink.com/categories/Android编译相关/">
+  <link rel="canonical" href="http://wowothink.com/0e320fa6/">
 
 
 
 
 
-  <title>分类: Android编译相关 | wowothink</title>
+  <title>Linux Kernel裁剪--menuconfig的使用 | wowothink</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -234,235 +239,254 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Android编译相关<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/0e320fa6/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Victor Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic.superbed.cn/item/5c84e39e3a213b04179c44fd">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wowothink">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/35da6ee3/" itemprop="url">
-              
-                <span itemprop="name">kbuild Makefile</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Linux Kernel裁剪--menuconfig的使用</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-14T16:32:38+08:00" content="2019-04-14">
-          04-14
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+		    
+			
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T21:52:08+08:00">
+                2018-05-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-Kernel优化/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux Kernel优化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  455
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/8b524cfd/" itemprop="url">
-              
-                <span itemprop="name">Android传递宏给uboot或kernel</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-12T22:37:37+08:00" content="2018-11-12">
-          11-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/3928006b/" itemprop="url">
-              
-                <span itemprop="name">解压打包img文件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-06T16:15:08+08:00" content="2018-05-06">
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>在项目初期，NXP提供了i.MX7ul的BSP包，里面包含了大量第三方平台的配置以及本项目未使用的功能。因此，需要在此基础上进行kernel的裁剪。<br>本文主要讲在不影响主要功能的前提下进行Linux Kernel裁剪的步骤。<a id="more"></a></p>
+<hr>
+<h1 id="开发平台"><a href="#开发平台" class="headerlink" title="开发平台"></a>开发平台</h1><p>SOC: i.MX7ul<br>Kernel: 4.9.51</p>
+<hr>
+<h1 id="porting"><a href="#porting" class="headerlink" title="porting"></a>porting</h1><p>porting uboot和kernel，保证kernel能够正常启动和串口能够正常使用。</p>
+<hr>
+<h1 id="替换-config为defconfig"><a href="#替换-config为defconfig" class="headerlink" title="替换.config为defconfig"></a>替换.config为defconfig</h1><p>将 <code>kernel_imx7/</code> 目录下的<code>.config</code>拷贝到 <code>arch/arm64/configs/xxx_defconfig</code>做这一步是为了后面使用 <code>make menuconfig</code> 图形化配置生成的<code>.config</code>和<code>xxx_defconfig</code>直接对比，对比的内容可以保证是自己通过图形化配置修改过的。</p>
+<hr>
+<h1 id="图形化配置"><a href="#图形化配置" class="headerlink" title="图形化配置"></a>图形化配置</h1><p>执行 <code>make menuconfig ARCH=arm xxx_defconfig</code><br>这里会将<code>xxx_defconfig</code>和<code>kernel_imx7/</code>下所有的<code>Kconfig</code>生成图形化配置。</p>
+<p>操作方式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Arrow keys navigate the menu.  &lt;Enter&gt; selects submenus ---&gt; (or empty submenus ----).  Highlighted letters are hotkeys.</span><br><span class="line">Pressing &lt;Y&gt; includes, &lt;N&gt; excludes, &lt;M&gt; modularizes features.  Press &lt;Esc&gt;&lt;Esc&gt; to exit, &lt;?&gt; for Help, &lt;/&gt; for Search.</span><br><span class="line">Legend: [*] built-in  [ ] excluded  &lt;M&gt; module  &lt; &gt; module capable</span><br></pre></td></tr></table></figure></p>
+<p>比如说，这里面的“Device Drivers”下，有个”USB support”，我们的项目中不需要这个功能，可以将其设置为N，然后保存到<code>.config</code>中。<br>这样，我们就可以将更新后的<code>.config</code>文件再次替换<code>xxx_defconfig</code>，这次修改的，就是去掉”USB support”相关的配置。</p>
+<p>如果我们不确定某一项是作何使用的，可以通过”h”调出帮助界面，比如说还是”USB support”，他的帮助信息如下：</p>
+<p>建议每次按照机能修改，每改一次做一次提交，保证kernel能正常的启动，并进行详细的说明。不要一次性改太多，免得以后调查问题回退不好定位。多次执行第4步，直至初步将kernel大致裁剪完毕。</p>
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/bee61d9c/" itemprop="url">
-              
-                <span itemprop="name">Makefile中添加获取编译的任务数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-06T16:05:08+08:00" content="2018-05-06">
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    </div>
+    
+    <div>
       
         
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/0a930e32/" itemprop="url">
-              
-                <span itemprop="name">system_core目录下添加新的应用程序</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-06T15:51:08+08:00" content="2018-05-06">
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/3928006b/" itemprop="url">
-              
-                <span itemprop="name">Android全编编译kernel和uboot</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-05T11:35:08+08:00" content="2018-05-05">
-          05-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/21f93ebf/" itemprop="url">
-              
-                <span itemprop="name">Android编译流程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-05T11:27:08+08:00" content="2018-05-05">
-          05-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/18a8e793/" itemprop="url">
-              
-                <span itemprop="name">打包ko到image中</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-01T14:20:08+08:00" content="2018-05-01">
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS�� sweetalert ���޸�·�� -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>Title:</span><a href="/0e320fa6/">Linux Kernel裁剪--menuconfig的使用</a></p>
+  <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
+  <p><span>Time:</span>2019-06-08 / 14:06</p>
+  <p><span>Link:</span><a href="/0e320fa6/" title="Linux Kernel裁剪--menuconfig的使用">http://wowothink.com/0e320fa6/</a>
+    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/0e320fa6/" aria-label="copy link success"></i></span>
+  </p>
+  <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: 'copy link success',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
 
 
       
     </div>
+    
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux-Kernel优化/" rel="tag"><i class="fa fa-tag"></i> Linux Kernel优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/18a8e793/" rel="next" title="打包ko到image中">
+                <i class="fa fa-chevron-left"></i> 打包ko到image中
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/127f8b72/" rel="prev" title="Linux Kernel优化--initcall_debug">
+                Linux Kernel优化--initcall_debug <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -470,6 +494,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -490,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -569,6 +606,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开发平台"><span class="nav-number">1.</span> <span class="nav-text">开发平台</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#porting"><span class="nav-number">2.</span> <span class="nav-text">porting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#替换-config为defconfig"><span class="nav-number">3.</span> <span class="nav-text">替换.config为defconfig</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图形化配置"><span class="nav-number">4.</span> <span class="nav-text">图形化配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -729,6 +782,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

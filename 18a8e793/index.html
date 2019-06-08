@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="碰到的问题,">
+  <meta name="keywords" content="Android编译相关,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
-<meta name="keywords" content="碰到的问题">
+<meta name="description" content="很多时候，我们要在系统启动的时候在init.rc中指定开机insmod某个ko文件，因此，需要将ko文件添加到system.img中。此处以Android下打包bcmdhd.ko到system/lib/modules/为例。">
+<meta name="keywords" content="Android编译相关">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta property="og:url" content="http://wowothink.com/abc20ccf/index.html">
+<meta property="og:title" content="打包ko到image中">
+<meta property="og:url" content="http://wowothink.com/18a8e793/index.html">
 <meta property="og:site_name" content="wowothink">
-<meta property="og:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta property="og:description" content="很多时候，我们要在系统启动的时候在init.rc中指定开机insmod某个ko文件，因此，需要将ko文件添加到system.img中。此处以Android下打包bcmdhd.ko到system/lib/modules/为例。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T08:23:55.058Z">
+<meta property="og:updated_time" content="2019-06-08T06:00:00.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta name="twitter:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta name="twitter:title" content="打包ko到image中">
+<meta name="twitter:description" content="很多时候，我们要在系统启动的时候在init.rc中指定开机insmod某个ko文件，因此，需要将ko文件添加到system.img中。此处以Android下打包bcmdhd.ko到system/lib/modules/为例。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wowothink.com/abc20ccf/">
+  <link rel="canonical" href="http://wowothink.com/18a8e793/">
 
 
 
 
 
-  <title>修改xxx_defconfig没有起效果原因分析 | wowothink</title>
+  <title>打包ko到image中 | wowothink</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/abc20ccf/">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/18a8e793/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Victor Huang">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">修改xxx_defconfig没有起效果原因分析</h1>
+          <h1 class="post-title" itemprop="name headline">打包ko到image中</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T21:35:00+08:00">
-                2018-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T14:20:08+08:00">
+                2018-05-01
               </time>
             
 
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
-                    <span itemprop="name">碰到的问题</span>
+                  <a href="/categories/Android编译相关/" itemprop="url" rel="index">
+                    <span itemprop="name">Android编译相关</span>
                   </a>
                 </span>
 
@@ -338,7 +338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  348
+                  500
                 </span>
               
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -375,13 +375,30 @@
       
 
       
-        <p>问题：正常情况下我们要在Kernel中配置某个功能，会去<code>Kernel_SrcDir/arch/arm/configs/xxx_defconfig</code>文件中修改某个<code>宏 =y</code>或者<code>is not set</code>。<br>但是有时候我们明明设置进去了，在<code>Kernel_SrcDir/.config</code>中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：<a id="more"></a></p>
+        <p>很多时候，我们要在系统启动的时候在<code>init.rc</code>中指定开机insmod某个ko文件，因此，需要将ko文件添加到system.img中。此处以Android下打包<code>bcmdhd.ko</code>到<code>system/lib/modules/</code>为例。<a id="more"></a></p>
 <hr>
-<p>1、编译之前没有事先删除<code>Kernel_SrcDir/.config</code>文件，如果<code>Kernel_SrcDir/.config</code>文件存在，是不会去更新<code>xxx_defconfig</code>的内容的；</p>
-<p>2、编写<code>xxx_defconfig</code>的格式不对，一定要严格按照以下格式：<font color="red">宏要顶格写，屏蔽宏的要使用<code>#</code>号。</font><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_XXX_LKCD=y</span><br><span class="line">#CONFIG_XXX_LKCD is <span class="keyword">not</span> <span class="built_in">set</span></span><br></pre></td></tr></table></figure></p>
-<p>3、比如说你已按照上述要求将<code>CONFIG_XXX_LKCD</code>配置为<code>is not set</code>，但在<code>.congig</code>中看到它还是为<code>CONFIG_XXX_LKCD=y</code>。<br>出现这种情况是由于在驱动位置中对应的<code>Kconfig</code>将其设置为<code>default y</code>，所以在<code>xxx_defconfig</code>怎么改这个宏都是打开的。<br>注意：<font color="red"><code>.config</code>是根据<code>xxx_defconfig</code>和代码路径下的<code>Kconfig</code>生成的。</font><br>我之前在<code>Kernel_SrcDir/drivers/xxx_lkcd/</code>新增一个驱动。肯定要在里面添加<code>Kconfig</code>，内容如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># <span class="function">ARM <span class="title">xxx_lkcd</span><span class="params">(xxx project linux kernel crash dump)</span> configuration</span></span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">menu <span class="string">"xxx linux kernel crash dump"</span></span><br><span class="line"></span><br><span class="line">config XXX_LKCD</span><br><span class="line">    <span class="keyword">bool</span> <span class="string">"Enable xxx linux kernel crash dump"</span></span><br><span class="line"><span class="keyword">default</span> n</span><br><span class="line">    depends on PROC_FS &amp;&amp; ARM</span><br><span class="line">    help</span><br><span class="line">        Enable xxx linux kernel crash dump</span><br><span class="line">endmenu</span><br></pre></td></tr></table></figure></p>
-<p>注意一定要设置<code>default n</code>，这样才能在<code>xxx_defconfig</code>自由的修改打开或者关闭。</p>
-
+<h1 id="编译生成-bcmdhd-ko"><a href="#编译生成-bcmdhd-ko" class="headerlink" title="编译生成 bcmdhd.ko"></a>编译生成 bcmdhd.ko</h1><p>通过<code>Kernel_SrcDir/drivers/net/wireless/bcmdhd/</code> 目录编译生成的 <code>bcmdhd.ko</code>会保存在如下的两个路径：</p>
+<ul>
+<li><p><code>Android_SrcDir/device/ProjectName/common/kernel-mod/lib/modules/4.1.15/kernel/drivers/net/wireless/bcmdhd/bcmdhd.ko</code></p>
+</li>
+<li><p><code>Kernel_SrcDir/drivers/net/wireless/bcmdhd/bcmdhd.ko</code></p>
+</li>
+</ul>
+<hr>
+<h1 id="修改xxx-mk文件"><a href="#修改xxx-mk文件" class="headerlink" title="修改xxx.mk文件"></a>修改xxx.mk文件</h1><p>在<code>Android_SrcDir/device/ProjectName/common/kernel-mod/xxx.mk</code> 添加以下4宏：</p>
+<p>指定编译存放在哪个路径<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MY_KERNEL_MOD_INSTALL_PATH := $(TARGET_OUT)/usr/lib/modules</span><br><span class="line">LOCAL_MODULE_PATH := $(MY_KERNEL_MOD_INSTALL_PATH)</span><br></pre></td></tr></table></figure></p>
+<p>指定ko的文件来源路径<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MY_KERNEL_WIFI_BCMDHD_PATH := lib/modules/<span class="number">4.1</span><span class="number">.15</span>/kernel/</span><br><span class="line">LOCAL_PREBUILT_EXECUTABLES := \</span><br><span class="line">$(MY_KERNEL_WIFI_BCMDHD_PATH)/drivers/net/wireless/bcmdhd/bcmdhd.ko</span><br></pre></td></tr></table></figure></p>
+<p><code>bcmdhd.ko</code>最终就会编译进system.img中去，即该ko会放到<code>system/usr/lib/modules/</code> 目录中去。</p>
+<p>经过测试，这样修改编译还是会提示找不到 <code>bcmdhd.ko</code>，需要将该ko先拷贝到<code>lib/modules/4.1.15/kernel/drivers/net/wireless/bcmdhd/</code> 目录下，然后重新编译就会自动拷贝打包。</p>
+<p>上述的调用关系流程为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Android_SrcDir/device/ProjectName/common/kernel-mod/xxx.mk</span><br><span class="line">ALL_DEFAULT_INSTALLED_MODULES += $(addprefix $(LOCAL_MODULE_PATH)/,$(notdir $(LOCAL_PREBUILT_EXECUTABLES)))</span><br><span class="line"></span><br><span class="line">Android_SrcDir/build/core/main.mk</span><br><span class="line">Default_MODULES := $(sort $(ALL_DEFAULT_INSTALLED_MODULES) \</span><br><span class="line"></span><br><span class="line">Android_SrcDir/build/core/main.mk</span><br><span class="line">modules_to_install := $(sort $(Default_MODULES) \</span><br></pre></td></tr></table></figure>
+<p>这部分的内容参照：<a href="http://blog.csdn.net/jscese/article/details/39209341" target="_blank" rel="noopener">http://blog.csdn.net/jscese/article/details/39209341</a></p>
+<hr>
+<h1 id="修改init-rc文件"><a href="#修改init-rc文件" class="headerlink" title="修改init.rc文件"></a>修改init.rc文件</h1><p>一般init.rc会放在<code>Android_SrcDir/device/ProjectName/SubProjectName/</code>目录下。</p>
+<hr>
+<h1 id="添加配置文件的存放路径"><a href="#添加配置文件的存放路径" class="headerlink" title="添加配置文件的存放路径"></a>添加配置文件的存放路径</h1><p>在<code>bcmdhd.ko</code> 使用过程中需要用到<code>fw_bcmdhd.bin</code>和<code>nvram.txt</code>等固件或配置文件，所以需要将其他们拷贝到指定路径，然后<code>insmod bcmdhd.ko</code>可以从该位置获取到这些文件的信息。<br>将<code>fw_bcmdhd.bin</code>和<code>nvram.txt</code>等固件或配置文件拷贝到<code>Android_SrcDir/device/ProjectName/SubProjectName/firmware_path</code> 路径下，其中 <code>firmware_path/</code> 目录可以自己创建。</p>
+<p>在 <code>Android_SrcDir/device/ProjectName/SubProjectName/BoardConfig.mk</code> 文件中的<code>PRODUCT_COPY_FILES</code>宏下添加要拷贝到的路径，比如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PRODUCT_COPY_FILES +=   \</span><br><span class="line">    device/ProjectName/SubProjectName/firmware_path/fw_bcmdhd.bin:system/etc/wifi/firmware/fw_bcmdhd.bin \</span><br><span class="line">device/ProjectName/SubProjectName/firmware_path/nvram.txt:system/etc/wifi/firmware/nvram.txt</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -394,11 +411,11 @@
   <!-- JS�� sweetalert ���޸�·�� -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>Title:</span><a href="/abc20ccf/">修改xxx_defconfig没有起效果原因分析</a></p>
+  <p><span>Title:</span><a href="/18a8e793/">打包ko到image中</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2019-03-17 / 16:03</p>
-  <p><span>Link:</span><a href="/abc20ccf/" title="修改xxx_defconfig没有起效果原因分析">http://wowothink.com/abc20ccf/</a>
-    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/abc20ccf/" aria-label="copy link success"></i></span>
+  <p><span>Time:</span>2019-06-08 / 14:06</p>
+  <p><span>Link:</span><a href="/18a8e793/" title="打包ko到image中">http://wowothink.com/18a8e793/</a>
+    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/18a8e793/" aria-label="copy link success"></i></span>
   </p>
   <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>  
 </div>
@@ -434,7 +451,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/碰到的问题/" rel="tag"><i class="fa fa-tag"></i> 碰到的问题</a>
+            <a href="/tags/Android编译相关/" rel="tag"><i class="fa fa-tag"></i> Android编译相关</a>
           
         </div>
       
@@ -447,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/e0007988/" rel="next" title="Linux测试U盘读写速度">
-                <i class="fa fa-chevron-left"></i> Linux测试U盘读写速度
+              <a href="/65b43654/" rel="next" title="Kernel添加spidev的设备节点">
+                <i class="fa fa-chevron-left"></i> Kernel添加spidev的设备节点
               </a>
             
           </div>
@@ -457,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/90870e97/" rel="prev" title="Linux Kernel Crash Dump">
-                Linux Kernel Crash Dump <i class="fa fa-chevron-right"></i>
+              <a href="/0e320fa6/" rel="prev" title="Linux Kernel裁剪--menuconfig的使用">
+                Linux Kernel裁剪--menuconfig的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -511,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -590,6 +616,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编译生成-bcmdhd-ko"><span class="nav-number">1.</span> <span class="nav-text">编译生成 bcmdhd.ko</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改xxx-mk文件"><span class="nav-number">2.</span> <span class="nav-text">修改xxx.mk文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改init-rc文件"><span class="nav-number">3.</span> <span class="nav-text">修改init.rc文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加配置文件的存放路径"><span class="nav-number">4.</span> <span class="nav-text">添加配置文件的存放路径</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

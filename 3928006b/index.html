@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="碰到的问题,">
+  <meta name="keywords" content="Android编译相关,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
-<meta name="keywords" content="碰到的问题">
+<meta name="description" content="在Android的工程目录下执行make命令，就会编译出system.img，执行本目录下的Makefile文件，该Makefile只有简单的一行，就是 build/core/main.mk。具体的话可以上网查Android编译过程。 本文主要是记录在Android的编译工程中加入编译kernel和uboot的功能。">
+<meta name="keywords" content="Android编译相关">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta property="og:url" content="http://wowothink.com/abc20ccf/index.html">
+<meta property="og:title" content="Android全编编译kernel和uboot">
+<meta property="og:url" content="http://wowothink.com/3928006b/index.html">
 <meta property="og:site_name" content="wowothink">
-<meta property="og:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta property="og:description" content="在Android的工程目录下执行make命令，就会编译出system.img，执行本目录下的Makefile文件，该Makefile只有简单的一行，就是 build/core/main.mk。具体的话可以上网查Android编译过程。 本文主要是记录在Android的编译工程中加入编译kernel和uboot的功能。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T08:23:55.058Z">
+<meta property="og:updated_time" content="2019-06-08T05:37:28.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修改xxx_defconfig没有起效果原因分析">
-<meta name="twitter:description" content="问题：正常情况下我们要在Kernel中配置某个功能，会去Kernel_SrcDir/arch/arm/configs/xxx_defconfig文件中修改某个宏 =y或者is not set。但是有时候我们明明设置进去了，在Kernel_SrcDir/.config中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：">
+<meta name="twitter:title" content="Android全编编译kernel和uboot">
+<meta name="twitter:description" content="在Android的工程目录下执行make命令，就会编译出system.img，执行本目录下的Makefile文件，该Makefile只有简单的一行，就是 build/core/main.mk。具体的话可以上网查Android编译过程。 本文主要是记录在Android的编译工程中加入编译kernel和uboot的功能。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://wowothink.com/abc20ccf/">
+  <link rel="canonical" href="http://wowothink.com/3928006b/">
 
 
 
 
 
-  <title>修改xxx_defconfig没有起效果原因分析 | wowothink</title>
+  <title>Android全编编译kernel和uboot | wowothink</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wowothink.com/abc20ccf/">
+    <link itemprop="mainEntityOfPage" href="http://wowothink.com/3928006b/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Victor Huang">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">修改xxx_defconfig没有起效果原因分析</h1>
+          <h1 class="post-title" itemprop="name headline">Android全编编译kernel和uboot</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T21:35:00+08:00">
-                2018-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T11:35:08+08:00">
+                2018-05-05
               </time>
             
 
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/碰到的问题/" itemprop="url" rel="index">
-                    <span itemprop="name">碰到的问题</span>
+                  <a href="/categories/Android编译相关/" itemprop="url" rel="index">
+                    <span itemprop="name">Android编译相关</span>
                   </a>
                 </span>
 
@@ -338,7 +338,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  348
+                  512
                 </span>
               
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -375,12 +375,19 @@
       
 
       
-        <p>问题：正常情况下我们要在Kernel中配置某个功能，会去<code>Kernel_SrcDir/arch/arm/configs/xxx_defconfig</code>文件中修改某个<code>宏 =y</code>或者<code>is not set</code>。<br>但是有时候我们明明设置进去了，在<code>Kernel_SrcDir/.config</code>中却没有看到已配置进去。出现该问题基本上以下几个原因导致的：<a id="more"></a></p>
+        <p>在Android的工程目录下执行<code>make</code>命令，就会编译出<code>system.img</code>，执行本目录下的<code>Makefile</code>文件，该<code>Makefile</code>只有简单的一行，就是 <code>build/core/main.mk</code>。具体的话可以上网查Android编译过程。</p>
+<p>本文主要是记录在Android的编译工程中加入编译kernel和uboot的功能。<a id="more"></a></p>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>新开一个项目，编译环境是基于linux，移植android的编译系统。但是使用make进行编译，只编译出 <code>uramdisk</code>和<code>system.img</code>，uboot和kernel只能单独执行下面的脚本进行编译：<br><code>./build-xxx-project.sh uboot</code>：编译uboot<br><code>./build-xxx-project.sh uImage</code>：编译kernel</p>
+<p>这就有个问题，如果我们想要将kernel编译出来的某些ko打包进system.img，通过宏<code>PRODUCT_COPY_FILES</code> 进行拷贝。这就有个问题，如果是个干净的库，编译<code>system.img</code>，有需要.ko文件才能打包，但是kernel没有编译，这就导致编译出错了。关于如何将ko打包进system.img，可以参照<a href="http://wowothink.com/2018/05/01/%E6%89%93%E5%8C%85ko%E6%96%87%E4%BB%B6%E5%88%B0image%E4%B8%AD/">打包ko到image中</a></p>
+<p>所以现在需要在执行 make 的时候，先编译kernel，再编译<code>system.img</code>。</p>
 <hr>
-<p>1、编译之前没有事先删除<code>Kernel_SrcDir/.config</code>文件，如果<code>Kernel_SrcDir/.config</code>文件存在，是不会去更新<code>xxx_defconfig</code>的内容的；</p>
-<p>2、编写<code>xxx_defconfig</code>的格式不对，一定要严格按照以下格式：<font color="red">宏要顶格写，屏蔽宏的要使用<code>#</code>号。</font><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_XXX_LKCD=y</span><br><span class="line">#CONFIG_XXX_LKCD is <span class="keyword">not</span> <span class="built_in">set</span></span><br></pre></td></tr></table></figure></p>
-<p>3、比如说你已按照上述要求将<code>CONFIG_XXX_LKCD</code>配置为<code>is not set</code>，但在<code>.congig</code>中看到它还是为<code>CONFIG_XXX_LKCD=y</code>。<br>出现这种情况是由于在驱动位置中对应的<code>Kconfig</code>将其设置为<code>default y</code>，所以在<code>xxx_defconfig</code>怎么改这个宏都是打开的。<br>注意：<font color="red"><code>.config</code>是根据<code>xxx_defconfig</code>和代码路径下的<code>Kconfig</code>生成的。</font><br>我之前在<code>Kernel_SrcDir/drivers/xxx_lkcd/</code>新增一个驱动。肯定要在里面添加<code>Kconfig</code>，内容如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#</span><br><span class="line"># <span class="function">ARM <span class="title">xxx_lkcd</span><span class="params">(xxx project linux kernel crash dump)</span> configuration</span></span><br><span class="line">#</span><br><span class="line"></span><br><span class="line">menu <span class="string">"xxx linux kernel crash dump"</span></span><br><span class="line"></span><br><span class="line">config XXX_LKCD</span><br><span class="line">    <span class="keyword">bool</span> <span class="string">"Enable xxx linux kernel crash dump"</span></span><br><span class="line"><span class="keyword">default</span> n</span><br><span class="line">    depends on PROC_FS &amp;&amp; ARM</span><br><span class="line">    help</span><br><span class="line">        Enable xxx linux kernel crash dump</span><br><span class="line">endmenu</span><br></pre></td></tr></table></figure></p>
-<p>注意一定要设置<code>default n</code>，这样才能在<code>xxx_defconfig</code>自由的修改打开或者关闭。</p>
+<h1 id="make"><a href="#make" class="headerlink" title="make"></a>make</h1><p>执行make的时候，会默认去执行 <code>build/core/main.mk</code> 的<font color="red">droidcore</font>目标，内容如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Build files <span class="keyword">and</span> then package it into the rom formats</span><br><span class="line">.PHONY: droidcore</span><br><span class="line">droidcore: files \</span><br><span class="line">	systemimage \</span><br><span class="line">	$(INSTALLED_BOOTIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_RECOVERYIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_VBMETAIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_USERDATAIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_CACHEIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_BPTIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_VENDORIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_PRODUCTIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_SYSTEMOTHERIMAGE_TARGET) \</span><br><span class="line">	$(INSTALLED_FILES_FILE) \</span><br><span class="line">	$(INSTALLED_FILES_FILE_VENDOR) \</span><br><span class="line">	$(INSTALLED_FILES_FILE_PRODUCT) \</span><br><span class="line">	$(INSTALLED_FILES_FILE_SYSTEMOTHER) \</span><br><span class="line">	soong_docs</span><br></pre></td></tr></table></figure></p>
+<p><code>droidcore</code>目标又依赖于上面的这些东西，这些东西又依赖于其他Makefile文件文件中定义的目标。</p>
+<hr>
+<h1 id="添加kernelimage和bootloader的依赖"><a href="#添加kernelimage和bootloader的依赖" class="headerlink" title="添加kernelimage和bootloader的依赖"></a>添加<code>kernelimage</code>和<code>bootloader</code>的依赖</h1><p>在 <code>build/core/main.mk</code>中的<code>droidcore</code>目标添加<code>kernelimage</code>和<code>bootloader</code>的<font color="red">依赖</font>，如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Build files <span class="keyword">and</span> then package it into the rom formats</span><br><span class="line">.PHONY: droidcore</span><br><span class="line">droidcore: files \</span><br><span class="line">    bootloader \</span><br><span class="line">    kernelimage \</span><br><span class="line">	systemimage \</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="新增编译kernelimage和bootloader的目标"><a href="#新增编译kernelimage和bootloader的目标" class="headerlink" title="新增编译kernelimage和bootloader的目标"></a>新增编译<code>kernelimage</code>和<code>bootloader</code>的目标</h1><p>在 <code>build/core/Makefile</code> 中添加新增编译<code>kernelimage</code>和<code>bootloader</code>的<font color="red">目标</font>，如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.PHONY: bootloader</span><br><span class="line">bootloader:</span><br><span class="line">    @echo <span class="string">"============================= make uboot ==============================="</span></span><br><span class="line">    ./build-xxx-project.sh uboot</span><br><span class="line">    @install -D u-boot-imx6/u-boot.bin $(PRODUCT_OUT)/u-boot.bin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.PHONY: kernelimage</span><br><span class="line">kernelimage:</span><br><span class="line">    @echo <span class="string">"============================= make kernel uImage ==============================="</span></span><br><span class="line">    ./build-xxx-project.sh uImage</span><br><span class="line">    @install -D kernel-imx6/arch/arm/boot/uImage+dtb $(PRODUCT_OUT)/uImage+dtb</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -394,11 +401,11 @@
   <!-- JS�� sweetalert ���޸�·�� -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>Title:</span><a href="/abc20ccf/">修改xxx_defconfig没有起效果原因分析</a></p>
+  <p><span>Title:</span><a href="/3928006b/">Android全编编译kernel和uboot</a></p>
   <p><span>Author:</span><a href="/" title="Visit Victor Huang blog">Victor Huang</a></p>
-  <p><span>Time:</span>2019-03-17 / 16:03</p>
-  <p><span>Link:</span><a href="/abc20ccf/" title="修改xxx_defconfig没有起效果原因分析">http://wowothink.com/abc20ccf/</a>
-    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/abc20ccf/" aria-label="copy link success"></i></span>
+  <p><span>Time:</span>2019-06-08 / 13:06</p>
+  <p><span>Link:</span><a href="/3928006b/" title="Android全编编译kernel和uboot">http://wowothink.com/3928006b/</a>
+    <span class="copy-path" title="click to copy link"><i class="fa fa-clipboard" data-clipboard-text="http://wowothink.com/3928006b/" aria-label="copy link success"></i></span>
   </p>
   <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>  
 </div>
@@ -434,7 +441,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/碰到的问题/" rel="tag"><i class="fa fa-tag"></i> 碰到的问题</a>
+            <a href="/tags/Android编译相关/" rel="tag"><i class="fa fa-tag"></i> Android编译相关</a>
           
         </div>
       
@@ -447,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/e0007988/" rel="next" title="Linux测试U盘读写速度">
-                <i class="fa fa-chevron-left"></i> Linux测试U盘读写速度
+              <a href="/21f93ebf/" rel="next" title="Android编译流程">
+                <i class="fa fa-chevron-left"></i> Android编译流程
               </a>
             
           </div>
@@ -457,8 +464,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/90870e97/" rel="prev" title="Linux Kernel Crash Dump">
-                Linux Kernel Crash Dump <i class="fa fa-chevron-right"></i>
+              <a href="/0a930e32/" rel="prev" title="system_core目录下添加新的应用程序">
+                system_core目录下添加新的应用程序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -511,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -590,6 +606,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#make"><span class="nav-number">2.</span> <span class="nav-text">make</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加kernelimage和bootloader的依赖"><span class="nav-number">3.</span> <span class="nav-text">添加kernelimage和bootloader的依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#新增编译kernelimage和bootloader的目标"><span class="nav-number">4.</span> <span class="nav-text">新增编译kernelimage和bootloader的目标</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
