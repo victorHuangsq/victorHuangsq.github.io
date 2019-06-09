@@ -1361,11 +1361,11 @@ pre .javascript .function {
   content: " ";
   position: absolute;
   top: 20px;
-  left: 0;
+  left: 6px;
   margin-left: -2px;
-  width: 4px;
+  width: 2px;
   height: 100%;
-  background: #f5f5f5;
+  background: #a4d8fa;
   z-index: -1;
 }
 @media (max-width: 767px) {
@@ -1389,12 +1389,13 @@ pre .javascript .function {
   content: " ";
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 11px;
   margin-left: -4px;
   margin-top: -4px;
   width: 8px;
   height: 8px;
-  background: #bbb;
+  background: #fff;
+  border: 5px solid #ff7242;
   border-radius: 50%;
 }
 .posts-collapse .post {
@@ -1406,19 +1407,19 @@ pre .javascript .function {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: border;
-  border-bottom: 1px dashed #ccc;
 }
 .posts-collapse .post-header::before {
   content: " ";
   position: absolute;
-  left: 0;
+  left: 3px;
   top: 12px;
   width: 6px;
   height: 6px;
   margin-left: -4px;
   background: #bbb;
   border-radius: 50%;
-  border: 1px solid #fff;
+  background: #fff;
+  border: 3px solid #49b1f5;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
@@ -1435,6 +1436,7 @@ pre .javascript .function {
   font-size: 12px;
   left: 20px;
   top: 5px;
+  color: #99a9bf;
 }
 .posts-collapse .post-comments-count {
   display: none;
@@ -1894,7 +1896,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #542b36;
+  background: #6cffe8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2459,11 +2461,12 @@ pre .javascript .function {
   top: 11px;
   left: 0;
   margin-left: -6px;
-  width: 10px;
-  height: 10px;
-  opacity: 0.5;
-  background: #555;
-  border: 1px solid #fff;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: #fff;
+  border: 6px solid #49b1f5;
+  border-radius: 100%;
   border-radius: 50%;
 }
 .category-all-page .category-all-title {
